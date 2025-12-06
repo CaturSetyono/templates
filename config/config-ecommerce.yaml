@@ -1,0 +1,232 @@
+site:
+  name: 'StyleHub'
+  description: 'Premium fashion and lifestyle online store'
+  theme:
+    primary: '#0ea5e9' # Sky 500
+    secondary: '#f43f5e' # Rose 500
+    accent: '#18181b' # Zinc 900
+  navigation:
+    logo:
+      text: 'StyleHub'
+    links:
+      - text: 'Shop'
+        href: '#'
+        children:
+          - text: 'New Arrivals'
+            href: '/shop/new'
+          - text: 'Women'
+            href: '/shop/women'
+          - text: 'Men'
+            href: '/shop/men'
+          - text: 'Accessories'
+            href: '/shop/accessories'
+      - text: 'Collections'
+        href: '#collections'
+      - text: 'Sale'
+        href: '/sale'
+      - text: 'About'
+        href: '/about'
+      - text: 'Contact'
+        href: '/contact'
+    cta:
+      text: 'Shop Now'
+      href: '/shop'
+  footer:
+    logo:
+      text: 'StyleHub'
+    tagline: 'Curating timeless style and modern elegance for the conscious consumer.'
+    copyright: '© 2025 StyleHub. All rights reserved.'
+    sections:
+      - title: 'Shop'
+        links:
+          - text: 'New Arrivals'
+            href: '/shop/new'
+          - text: 'Best Sellers'
+            href: '/shop/bestsellers'
+          - text: 'Sale Items'
+            href: '/sale'
+      - title: 'Customer Care'
+        links:
+          - text: 'Shipping & Returns'
+            href: '/shipping'
+          - text: 'Size Guide'
+            href: '/size-guide'
+          - text: 'FAQs'
+            href: '/faq'
+      - title: 'Company'
+        links:
+          - text: 'About Us'
+            href: '/about'
+          - text: 'Sustainability'
+            href: '/sustainability'
+          - text: 'Contact'
+            href: '/contact'
+
+sections:
+  - type: 'hero'
+    alignment: 'center'
+    title: 'Discover Your Style, Define Your Story'
+    subtitle: 'Premium fashion and accessories curated for the modern lifestyle. Quality craftsmanship meets contemporary design.'
+    cta:
+      primary:
+        text: 'Shop New Arrivals'
+        href: '/shop/new'
+      secondary:
+        text: 'Explore Collections'
+        href: '#collections'
+    image:
+      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200'
+      alt: 'Fashion model'
+
+  - type: 'logo-cloud'
+    title: 'As featured in'
+    logos:
+      - name: 'Vogue'
+        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=VOGUE'
+      - name: 'Elle'
+        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=ELLE'
+      - name: 'GQ'
+        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=GQ'
+      - name: "Harper's Bazaar"
+        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=BAZAAR'
+      - name: 'InStyle'
+        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=InStyle'
+
+  - type: 'stats'
+    title: 'Why Shop with Us'
+    items:
+      - value: '100K+'
+        label: 'Happy Customers'
+      - value: '5000+'
+        label: 'Products'
+      - value: '4.8★'
+        label: 'Average Rating'
+      - value: '50+'
+        label: 'Countries Shipped'
+
+  - type: 'features'
+    layout: 'grid'
+    title: 'The StyleHub Experience'
+    subtitle: 'Shopping made simple, elegant, and sustainable'
+    items:
+      - icon: '🚚'
+        title: 'Free Worldwide Shipping'
+        description: 'Free express shipping on all orders over $100. Fast, tracked delivery to your door.'
+      - icon: '🔄'
+        title: 'Easy Returns'
+        description: '30-day hassle-free returns. Not in love? Send it back for free, no questions asked.'
+      - icon: '♻️'
+        title: 'Sustainable Fashion'
+        description: 'Ethically sourced materials and eco-friendly production. Style with a conscience.'
+      - icon: '✨'
+        title: 'Premium Quality'
+        description: 'Handpicked pieces that blend craftsmanship with contemporary design.'
+      - icon: '💳'
+        title: 'Secure Checkout'
+        description: 'Shop safely with encrypted transactions and multiple payment options.'
+      - icon: '📱'
+        title: 'Shop on the Go'
+        description: 'Seamless mobile experience. Browse and buy from anywhere, anytime.'
+
+  - type: 'gallery'
+    title: 'Featured Collections'
+    subtitle: 'Explore our curated seasonal selections'
+    images:
+      - src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600'
+        alt: 'Fashion accessories'
+      - src: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600'
+        alt: "Women's clothing"
+      - src: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600'
+        alt: "Men's fashion"
+      - src: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600'
+        alt: 'Shoes collection'
+      - src: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600'
+        alt: 'Jewelry'
+      - src: 'https://images.unsplash.com/photo-1558769132-cb1aea8f762?w=600'
+        alt: 'Handbags'
+
+  - type: 'content'
+    title: 'Sustainable Fashion for a Better Future'
+    subtitle: "Style shouldn't cost the earth"
+    content: |
+      At StyleHub, we believe fashion can be both beautiful and responsible. That's why we're committed to sustainability at every step:
+
+      **Ethical Sourcing** - We partner with suppliers who share our values, ensuring fair wages and safe working conditions.
+
+      **Eco-Friendly Materials** - From organic cotton to recycled fabrics, we choose materials that minimize environmental impact.
+
+      **Circular Fashion** - Our take-back program gives your pre-loved items a second life through resale or recycling.
+
+      **Carbon Neutral Shipping** - We offset 100% of shipping emissions and use recyclable packaging.
+
+      Every purchase supports our mission to create a more sustainable fashion industry. Together, we can make a difference.
+    image:
+      src: 'https://images.unsplash.com/photo-1558769132-cb1aea8f762f?w=800'
+      alt: 'Sustainable fashion'
+      position: 'left'
+
+  - type: 'grid'
+    title: 'Shop by Category'
+    subtitle: "Find exactly what you're looking for"
+    items:
+      - title: "Women's Collection"
+        description: 'Elegant dresses, tops, and more'
+        image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400'
+        link: '/shop/women'
+      - title: "Men's Collection"
+        description: 'Contemporary style for modern men'
+        image: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400'
+        link: '/shop/men'
+      - title: 'Accessories'
+        description: 'Complete your look'
+        image: 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=400'
+        link: '/shop/accessories'
+      - title: 'New Arrivals'
+        description: 'Fresh styles just in'
+        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400'
+        link: '/shop/new'
+
+  - type: 'testimonials'
+    title: 'Customer Reviews'
+    subtitle: 'What our customers are saying'
+    items:
+      - quote: "Best online shopping experience ever! The quality is outstanding and shipping was super fast. I'll definitely be ordering again."
+        author: 'Jessica Williams'
+        role: 'Verified Buyer'
+        company: ''
+        avatar: 'https://i.pravatar.cc/150?img=16'
+      - quote: 'Love that StyleHub focuses on sustainability. The clothes are beautiful and I feel good about my purchases. Highly recommend!'
+        author: 'Daniel Chen'
+        role: 'Verified Buyer'
+        company: ''
+        avatar: 'https://i.pravatar.cc/150?img=17'
+      - quote: 'The fit is perfect and the materials feel premium. Customer service was also very helpful when I had questions about sizing.'
+        author: 'Amanda Foster'
+        role: 'Verified Buyer'
+        company: ''
+        avatar: 'https://i.pravatar.cc/150?img=18'
+
+  - type: 'faq'
+    title: 'Frequently Asked Questions'
+    items:
+      - question: 'What is your return policy?'
+        answer: 'We offer a 30-day return policy on all items. Items must be unworn, unwashed, and in original condition with tags attached. Returns are free and easy through our returns portal.'
+      - question: 'How long does shipping take?'
+        answer: 'Standard shipping takes 5-7 business days. Express shipping (2-3 days) is available at checkout. International orders typically arrive within 7-14 business days.'
+      - question: 'Do you ship internationally?'
+        answer: 'Yes! We ship to over 50 countries worldwide. Shipping costs and delivery times vary by location and are calculated at checkout.'
+      - question: 'How do I find my size?'
+        answer: "Check our detailed size guide for measurements. If you're between sizes, we recommend sizing up. Our customer service team is also happy to help!"
+      - question: 'Are your products sustainable?'
+        answer: 'Yes! We prioritize sustainable materials, ethical production, and carbon-neutral shipping. Learn more on our Sustainability page.'
+
+  - type: 'cta'
+    title: 'Join the StyleHub Community'
+    subtitle: 'Sign up for exclusive offers, style tips, and early access to new collections'
+    cta:
+      primary:
+        text: 'Shop Now'
+        href: '/shop'
+      secondary:
+        text: 'Subscribe to Newsletter'
+        href: '/newsletter'
