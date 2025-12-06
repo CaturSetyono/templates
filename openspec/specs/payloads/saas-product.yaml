@@ -1,0 +1,447 @@
+# SaaS Product Website Configuration
+# Product-focused with pricing, features, FAQ, and conversion optimization
+
+site:
+  name: "TaskFlow"
+  description: "Modern project management for teams"
+  theme:
+    primary: "#0ea5e9"
+    secondary: "#6366f1"
+
+  navigation:
+    logo:
+      text: "TaskFlow"
+    links:
+      - text: "Features"
+        href: "#features"
+      - text: "Pricing"
+        href: "#pricing"
+      - text: "Resources"
+        href: "#"
+        children:
+          - text: "Documentation"
+            href: "/docs"
+          - text: "API Reference"
+            href: "/api"
+          - text: "Blog"
+            href: "/blog"
+          - text: "Help Center"
+            href: "/help"
+      - text: "About"
+        href: "/about"
+    cta:
+      text: "Start Free Trial"
+      href: "/signup"
+    sticky: true
+
+  footer:
+    layout: "columns"
+    sections:
+      - title: "Product"
+        links:
+          - text: "Features"
+            href: "/#features"
+          - text: "Pricing"
+            href: "/#pricing"
+          - text: "Security"
+            href: "/security"
+          - text: "Integrations"
+            href: "/integrations"
+      - title: "Company"
+        links:
+          - text: "About"
+            href: "/about"
+          - text: "Blog"
+            href: "/blog"
+          - text: "Careers"
+            href: "/careers"
+          - text: "Contact"
+            href: "/contact"
+      - title: "Resources"
+        links:
+          - text: "Documentation"
+            href: "/docs"
+          - text: "API"
+            href: "/api"
+          - text: "Help Center"
+            href: "/help"
+          - text: "Status"
+            href: "https://status.taskflow.com"
+    newsletter:
+      title: "Stay Updated"
+      description: "Get product updates and tips"
+      placeholder: "Enter your email"
+      buttonText: "Subscribe"
+    social:
+      - platform: "twitter"
+        url: "https://twitter.com/taskflow"
+      - platform: "linkedin"
+        url: "https://linkedin.com/company/taskflow"
+      - platform: "github"
+        url: "https://github.com/taskflow"
+    copyright: "© 2025 TaskFlow Inc."
+
+pages:
+  - slug: "/"
+    sections:
+      # Hero - Product value proposition
+      - type: hero
+        props:
+          layout: centered
+          title: "Project Management Made Simple"
+          subtitle: "Streamline your workflow, collaborate seamlessly, and deliver projects on time"
+          buttons:
+            - text: "Start Free 14-Day Trial"
+              href: "/signup"
+              variant: primary
+            - text: "Watch Demo"
+              href: "#video"
+              variant: outline
+          image:
+            url: "https://cdn.taskflow.com/hero-dashboard.png"
+            alt: "TaskFlow dashboard"
+
+      # Partners - Social proof
+      - type: partners
+        props:
+          title: "Trusted by 10,000+ Teams Worldwide"
+          layout: grid
+          columns: 5
+          grayscale: true
+          logos:
+            - id: "customer-1"
+              image: "https://cdn.taskflow.com/logos/shopify.svg"
+              alt: "Shopify"
+            - id: "customer-2"
+              image: "https://cdn.taskflow.com/logos/stripe.svg"
+              alt: "Stripe"
+            - id: "customer-3"
+              image: "https://cdn.taskflow.com/logos/atlassian.svg"
+              alt: "Atlassian"
+            - id: "customer-4"
+              image: "https://cdn.taskflow.com/logos/zendesk.svg"
+              alt: "Zendesk"
+            - id: "customer-5"
+              image: "https://cdn.taskflow.com/logos/dropbox.svg"
+              alt: "Dropbox"
+
+      # Stats - Key metrics
+      - type: stats
+        props:
+          layout: inline
+          items:
+            - value: 10000
+              label: "Active Teams"
+              suffix: "+"
+              animation: true
+            - value: 5
+              label: "Projects Completed"
+              suffix: "M+"
+              animation: true
+            - value: 99.9
+              label: "Uptime"
+              suffix: "%"
+              animation: true
+            - value: 4.9
+              label: "User Rating"
+              suffix: "/5"
+              animation: true
+
+      # Features - Core functionality
+      - type: features
+        id: "features"
+        props:
+          title: "Everything You Need to Manage Projects"
+          subtitle: "Powerful features that scale with your team"
+          columns: 3
+          items:
+            - title: "Task Management"
+              description: "Create, assign, and track tasks with flexible workflows"
+              icon:
+                type: lucide
+                name: "CheckSquare"
+            - title: "Team Collaboration"
+              description: "Real-time updates, comments, and file sharing"
+              icon:
+                type: lucide
+                name: "Users"
+            - title: "Time Tracking"
+              description: "Built-in time tracking and productivity insights"
+              icon:
+                type: lucide
+                name: "Clock"
+            - title: "Gantt Charts"
+              description: "Visual project timelines and dependencies"
+              icon:
+                type: lucide
+                name: "BarChart"
+            - title: "Integrations"
+              description: "Connect with 100+ tools you already use"
+              icon:
+                type: lucide
+                name: "Plug"
+            - title: "Reports & Analytics"
+              description: "Data-driven insights to improve performance"
+              icon:
+                type: lucide
+                name: "TrendingUp"
+
+      # Video - Product demo
+      - type: video
+        id: "video"
+        props:
+          title: "See TaskFlow in Action"
+          description: "Watch a 2-minute overview of key features"
+          video:
+            type: youtube
+            id: "dQw4w9WgXcQ"
+            thumbnail: "https://cdn.taskflow.com/demo-thumb.jpg"
+            aspectRatio: "16:9"
+          controls: true
+          overlay:
+            enabled: true
+
+      # Pricing - Plans comparison
+      - type: pricing
+        id: "pricing"
+        props:
+          title: "Simple, Transparent Pricing"
+          subtitle: "Start free, upgrade as you grow"
+          toggle:
+            enabled: true
+            discount: "Save 20% with annual billing"
+          plans:
+            - name: "Free"
+              description: "For individuals and small teams"
+              price:
+                monthly: 0
+                yearly: 0
+                currency: "$"
+                period: "/month"
+              features:
+                - "Up to 3 team members"
+                - "5 projects"
+                - "Basic task management"
+                - "1GB file storage"
+                - "Community support"
+              cta:
+                text: "Start Free"
+                href: "/signup?plan=free"
+
+            - name: "Pro"
+              badge: "Most Popular"
+              featured: true
+              description: "For growing teams"
+              price:
+                monthly: 12
+                yearly: 120
+                currency: "$"
+                period: "/user/month"
+              features:
+                - "Unlimited team members"
+                - "Unlimited projects"
+                - "Advanced workflows"
+                - "100GB file storage"
+                - "Time tracking"
+                - "Gantt charts"
+                - "Priority support"
+                - "Integrations"
+              cta:
+                text: "Start Free Trial"
+                href: "/signup?plan=pro"
+
+            - name: "Enterprise"
+              description: "For large organizations"
+              price:
+                monthly: "Custom"
+              features:
+                - "Everything in Pro"
+                - "Unlimited storage"
+                - "Advanced security"
+                - "SSO / SAML"
+                - "Custom integrations"
+                - "Dedicated support"
+                - "SLA guarantee"
+                - "Custom training"
+              cta:
+                text: "Contact Sales"
+                href: "/contact?plan=enterprise"
+
+      # Testimonials - Customer success
+      - type: testimonials
+        props:
+          title: "Loved by Teams Everywhere"
+          layout: grid
+          items:
+            - id: "review-1"
+              content: "TaskFlow transformed how our team works. We're 40% more productive since switching."
+              author:
+                name: "Jessica Lee"
+                role: "Product Manager, TechCo"
+                avatar: "https://cdn.taskflow.com/avatars/jessica.jpg"
+              rating: 5
+              source: "Google"
+            - id: "review-2"
+              content: "Best project management tool we've used. Intuitive, powerful, and reliable."
+              author:
+                name: "David Kim"
+                role: "Engineering Lead, StartupXYZ"
+                avatar: "https://cdn.taskflow.com/avatars/david.jpg"
+              rating: 5
+              source: "Trustpilot"
+            - id: "review-3"
+              content: "The integrations are game-changing. Everything we need in one place."
+              author:
+                name: "Maria Garcia"
+                role: "Operations Director, AgencyCo"
+                avatar: "https://cdn.taskflow.com/avatars/maria.jpg"
+              rating: 5
+            - id: "review-4"
+              content: "Support team is incredibly responsive. Issues resolved within hours."
+              author:
+                name: "Ryan Patel"
+                role: "CTO, ScaleUp Inc"
+                avatar: "https://cdn.taskflow.com/avatars/ryan.jpg"
+              rating: 5
+
+      # FAQ - Common questions
+      - type: faq
+        props:
+          title: "Frequently Asked Questions"
+          search:
+            enabled: true
+            placeholder: "Search questions..."
+          layout: two-column
+          items:
+            - id: "faq-1"
+              question: "How does the free trial work?"
+              answer: "You get 14 days of full access to Pro features, no credit card required. After the trial, you can choose to upgrade or downgrade to our free plan."
+              category: "Billing"
+            - id: "faq-2"
+              question: "Can I change plans anytime?"
+              answer: "Yes! You can upgrade, downgrade, or cancel at any time. Changes take effect immediately and we'll prorate your billing."
+              category: "Billing"
+            - id: "faq-3"
+              question: "What payment methods do you accept?"
+              answer: "We accept all major credit cards (Visa, MasterCard, Amex) and PayPal. Enterprise customers can pay via invoice."
+              category: "Billing"
+            - id: "faq-4"
+              question: "Is my data secure?"
+              answer: "Absolutely. We use bank-level 256-bit SSL encryption, and all data is backed up daily. We're SOC 2 Type II certified."
+              category: "Security"
+            - id: "faq-5"
+              question: "Can I import data from other tools?"
+              answer: "Yes, we have import wizards for Asana, Trello, Jira, and other popular tools. Our support team can help with custom imports."
+              category: "Getting Started"
+            - id: "faq-6"
+              question: "What integrations are available?"
+              answer: "We integrate with 100+ tools including Slack, Google Workspace, Microsoft Teams, GitHub, Figma, and more."
+              category: "Integrations"
+            - id: "faq-7"
+              question: "Do you offer training?"
+              answer: "Yes! We provide free webinars, video tutorials, and documentation. Enterprise plans include custom onboarding sessions."
+              category: "Support"
+            - id: "faq-8"
+              question: "What's your refund policy?"
+              answer: "We offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund."
+              category: "Billing"
+
+      # CTA - Final conversion
+      - type: cta
+        props:
+          title: "Ready to Transform Your Workflow?"
+          description: "Join 10,000+ teams already using TaskFlow. Start your free trial today — no credit card required."
+          buttons:
+            - text: "Start Free 14-Day Trial"
+              href: "/signup"
+              variant: primary
+            - text: "Schedule a Demo"
+              href: "/demo"
+              variant: outline
+          background:
+            color: "primary"
+            overlay: true
+            pattern: dots
+          alignment: center
+          padding: xl
+
+  # ==================== INTEGRATIONS PAGE ====================
+  - slug: "/integrations"
+    sections:
+      # Hero
+      - type: hero
+        props:
+          layout: centered
+          title: "Connect Your Favorite Tools"
+          subtitle: "TaskFlow integrates with 100+ apps you already use"
+
+      # Partners - Integration logos
+      - type: partners
+        props:
+          title: "Popular Integrations"
+          layout: grid
+          columns: 6
+          logos:
+            - id: "int-slack"
+              image: "https://cdn.taskflow.com/integrations/slack.svg"
+              alt: "Slack"
+              link: "/integrations/slack"
+            - id: "int-google"
+              image: "https://cdn.taskflow.com/integrations/google.svg"
+              alt: "Google Workspace"
+              link: "/integrations/google"
+            - id: "int-github"
+              image: "https://cdn.taskflow.com/integrations/github.svg"
+              alt: "GitHub"
+              link: "/integrations/github"
+            - id: "int-figma"
+              image: "https://cdn.taskflow.com/integrations/figma.svg"
+              alt: "Figma"
+              link: "/integrations/figma"
+            - id: "int-zoom"
+              image: "https://cdn.taskflow.com/integrations/zoom.svg"
+              alt: "Zoom"
+              link: "/integrations/zoom"
+            - id: "int-dropbox"
+              image: "https://cdn.taskflow.com/integrations/dropbox.svg"
+              alt: "Dropbox"
+              link: "/integrations/dropbox"
+
+      # Features - Integration categories
+      - type: features
+        props:
+          title: "Integrate Everything"
+          columns: 3
+          items:
+            - title: "Communication"
+              description: "Slack, Microsoft Teams, Discord"
+              icon:
+                type: lucide
+                name: "MessageSquare"
+            - title: "File Storage"
+              description: "Google Drive, Dropbox, OneDrive"
+              icon:
+                type: lucide
+                name: "FolderOpen"
+            - title: "Development"
+              description: "GitHub, GitLab, Bitbucket"
+              icon:
+                type: lucide
+                name: "GitBranch"
+            - title: "Design"
+              description: "Figma, Sketch, Adobe Creative Cloud"
+              icon:
+                type: lucide
+                name: "Palette"
+            - title: "Time Tracking"
+              description: "Harvest, Toggl, Clockify"
+              icon:
+                type: lucide
+                name: "Timer"
+            - title: "Calendar"
+              description: "Google Calendar, Outlook, Apple Calendar"
+              icon:
+                type: lucide
+                name: "Calendar"
+# Total: 400+ lines
+# Demonstrates: SaaS-specific components, pricing focus, conversion optimization
