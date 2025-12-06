@@ -1,0 +1,204 @@
+site:
+  name: 'CloudFlow'
+  description: 'Modern SaaS platform for team collaboration'
+  theme:
+    primary: '#3b82f6' # Blue 500
+    secondary: '#8b5cf6' # Violet 500
+    accent: '#0f172a' # Slate 900
+  navigation:
+    logo:
+      text: 'CloudFlow'
+    links:
+      - text: 'Features'
+        href: '#features'
+      - text: 'Pricing'
+        href: '#pricing'
+      - text: 'Resources'
+        href: '#'
+        children:
+          - text: 'Documentation'
+            href: '/docs'
+          - text: 'API Reference'
+            href: '/api'
+          - text: 'Blog'
+            href: '/blog'
+      - text: 'About'
+        href: '/about'
+    cta:
+      text: 'Start Free Trial'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'CloudFlow'
+    tagline: 'Streamline your workflow with intelligent automation and seamless collaboration.'
+    copyright: '© 2025 CloudFlow Inc. All rights reserved.'
+    sections:
+      - title: 'Product'
+        links:
+          - text: 'Features'
+            href: '#features'
+          - text: 'Pricing'
+            href: '#pricing'
+          - text: 'Security'
+            href: '/security'
+      - title: 'Company'
+        links:
+          - text: 'About Us'
+            href: '/about'
+          - text: 'Careers'
+            href: '/careers'
+          - text: 'Contact'
+            href: '/contact'
+      - title: 'Resources'
+        links:
+          - text: 'Documentation'
+            href: '/docs'
+          - text: 'API'
+            href: '/api'
+          - text: 'Blog'
+            href: '/blog'
+
+sections:
+  - type: 'hero'
+    alignment: 'center'
+    title: 'Collaborate Smarter, Work Faster'
+    subtitle: 'CloudFlow brings your team together with powerful tools for project management, communication, and workflow automation.'
+    cta:
+      primary:
+        text: 'Start Free Trial'
+        href: '/signup'
+      secondary:
+        text: 'Watch Demo'
+        href: '#demo'
+    image:
+      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200'
+      alt: 'Team collaboration'
+
+  - type: 'logo-cloud'
+    title: 'Trusted by innovative teams worldwide'
+    logos:
+      - name: 'TechCorp'
+        src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=TechCorp'
+      - name: 'DataFlow'
+        src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=DataFlow'
+      - name: 'InnovateLab'
+        src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=InnovateLab'
+      - name: 'CloudFirst'
+        src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=CloudFirst'
+      - name: 'DevStream'
+        src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=DevStream'
+
+  - type: 'features'
+    layout: 'grid'
+    title: 'Everything you need to succeed'
+    subtitle: 'Powerful features designed for modern teams'
+    items:
+      - icon: '🚀'
+        title: 'Lightning Fast'
+        description: 'Built for speed with cutting-edge technology and optimized performance.'
+      - icon: '🔒'
+        title: 'Enterprise Security'
+        description: 'Bank-level encryption and compliance with SOC 2, GDPR, and HIPAA standards.'
+      - icon: '🤖'
+        title: 'AI-Powered Automation'
+        description: 'Automate repetitive tasks and let AI handle the boring stuff.'
+      - icon: '📊'
+        title: 'Real-time Analytics'
+        description: 'Get instant insights with comprehensive dashboards and reports.'
+      - icon: '🔗'
+        title: 'Seamless Integrations'
+        description: 'Connect with 100+ tools you already use every day.'
+      - icon: '📱'
+        title: 'Mobile First'
+        description: 'Access your workspace from anywhere with native mobile apps.'
+
+  - type: 'stats'
+    title: 'Proven results that speak for themselves'
+    items:
+      - value: '50K+'
+        label: 'Active Teams'
+      - value: '99.9%'
+        label: 'Uptime SLA'
+      - value: '2M+'
+        label: 'Tasks Completed'
+      - value: '150+'
+        label: 'Countries'
+
+  - type: 'testimonials'
+    title: 'Loved by teams around the world'
+    subtitle: 'See what our customers have to say'
+    items:
+      - quote: 'CloudFlow transformed how our team works. Productivity is up 40% and everyone is happier.'
+        author: 'Sarah Chen'
+        role: 'VP of Engineering'
+        company: 'TechCorp'
+        avatar: 'https://i.pravatar.cc/150?img=1'
+      - quote: "The best collaboration tool we've ever used. Setup was a breeze and the ROI was immediate."
+        author: 'Michael Rodriguez'
+        role: 'Operations Director'
+        company: 'DataFlow'
+        avatar: 'https://i.pravatar.cc/150?img=2'
+      - quote: "Game-changer for remote teams. We can't imagine working without it now."
+        author: 'Emily Johnson'
+        role: 'Product Manager'
+        company: 'InnovateLab'
+        avatar: 'https://i.pravatar.cc/150?img=3'
+
+  - type: 'pricing'
+    title: 'Simple, transparent pricing'
+    subtitle: 'Choose the perfect plan for your team'
+    items:
+      - name: 'Starter'
+        price: '$9'
+        period: '/user/month'
+        description: 'Perfect for small teams getting started'
+        features:
+          - 'Up to 10 users'
+          - '5 GB storage'
+          - 'Basic integrations'
+          - 'Email support'
+        cta:
+          text: 'Start Free Trial'
+          href: '/signup?plan=starter'
+        highlighted: false
+      - name: 'Professional'
+        price: '$29'
+        period: '/user/month'
+        description: 'For growing teams that need more power'
+        features:
+          - 'Unlimited users'
+          - '100 GB storage'
+          - 'Advanced integrations'
+          - 'Priority support'
+          - 'Custom workflows'
+          - 'Advanced analytics'
+        cta:
+          text: 'Start Free Trial'
+          href: '/signup?plan=pro'
+        highlighted: true
+      - name: 'Enterprise'
+        price: 'Custom'
+        period: ''
+        description: 'For large organizations with specific needs'
+        features:
+          - 'Unlimited everything'
+          - 'Dedicated support'
+          - 'SLA guarantee'
+          - 'Custom integrations'
+          - 'Advanced security'
+          - 'Training & onboarding'
+        cta:
+          text: 'Contact Sales'
+          href: '/contact'
+        highlighted: false
+
+  - type: 'cta'
+    title: 'Ready to transform your workflow?'
+    subtitle: 'Join 50,000+ teams already using CloudFlow'
+    cta:
+      primary:
+        text: 'Start Free Trial'
+        href: '/signup'
+      secondary:
+        text: 'Schedule Demo'
+        href: '/demo'
