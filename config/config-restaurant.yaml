@@ -1,0 +1,175 @@
+site:
+  name: 'Bella Italia'
+  description: 'Authentic Italian restaurant serving traditional cuisine'
+  theme:
+    primary: '#dc2626' # Red 600
+    secondary: '#ca8a04' # Yellow 600
+    accent: '#1c1917' # Stone 900
+  navigation:
+    logo:
+      text: 'Bella Italia'
+    links:
+      - text: 'Menu'
+        href: '#menu'
+      - text: 'Gallery'
+        href: '#gallery'
+      - text: 'About'
+        href: '#about'
+      - text: 'Testimonials'
+        href: '#testimonials'
+      - text: 'Contact'
+        href: '/contact'
+    cta:
+      text: 'Reserve Table'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'Bella Italia'
+    tagline: 'Bringing the authentic taste of Italy to your table since 1985.'
+    copyright: '© 2025 Bella Italia Restaurant. All rights reserved.'
+    sections:
+      - title: 'Menu'
+        links:
+          - text: 'Appetizers'
+            href: '#menu'
+          - text: 'Main Courses'
+            href: '#menu'
+          - text: 'Desserts'
+            href: '#menu'
+      - title: 'Info'
+        links:
+          - text: 'About Us'
+            href: '#about'
+          - text: 'Our Chef'
+            href: '#team'
+          - text: 'Reservations'
+            href: '/signup'
+      - title: 'Contact'
+        links:
+          - text: 'Location'
+            href: '/contact'
+          - text: 'Hours'
+            href: '/contact'
+          - text: 'Catering'
+            href: '/contact'
+
+sections:
+  - type: 'hero'
+    alignment: 'center'
+    title: 'Experience Authentic Italian Cuisine'
+    subtitle: 'From Rome to your table. Fresh ingredients, traditional recipes, and a warm atmosphere that feels like home.'
+    cta:
+      primary:
+        text: 'Reserve Your Table'
+        href: '/signup'
+      secondary:
+        text: 'View Menu'
+        href: '#menu'
+    image:
+      src: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200'
+      alt: 'Italian restaurant interior'
+
+  - type: 'stats'
+    title: 'Our Story in Numbers'
+    items:
+      - value: '38+'
+        label: 'Years of Excellence'
+      - value: '50K+'
+        label: 'Happy Guests'
+      - value: '150+'
+        label: 'Signature Dishes'
+      - value: '5⭐'
+        label: 'Average Rating'
+
+  - type: 'features'
+    layout: 'grid'
+    title: 'What Makes Us Special'
+    subtitle: 'Authentic Italian dining experience'
+    items:
+      - icon: '🍝'
+        title: 'Traditional Recipes'
+        description: 'Handed down through generations, our recipes stay true to Italian heritage.'
+      - icon: '🌿'
+        title: 'Fresh Ingredients'
+        description: 'We source locally and import from Italy for authentic flavor.'
+      - icon: '👨‍🍳'
+        title: 'Master Chefs'
+        description: 'Our chefs trained in Rome bring genuine Italian culinary expertise.'
+      - icon: '🍷'
+        title: 'Wine Selection'
+        description: 'Curated collection of Italian wines from renowned vineyards.'
+      - icon: '🏡'
+        title: 'Cozy Atmosphere'
+        description: 'Warm, rustic decor that transports you to the Italian countryside.'
+      - icon: '🎵'
+        title: 'Live Music'
+        description: 'Enjoy live Italian music every Friday and Saturday evening.'
+
+  - type: 'gallery'
+    title: 'Taste of Italy'
+    subtitle: 'A visual journey through our culinary creations'
+    images:
+      - src: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600'
+        alt: 'Pasta dish'
+      - src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600'
+        alt: 'Pizza margherita'
+      - src: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600'
+        alt: 'Tiramisu dessert'
+      - src: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600'
+        alt: 'Italian wine'
+      - src: 'https://images.unsplash.com/photo-1612837017391-4b6b7e7b6bb0?w=600'
+        alt: 'Lasagna'
+      - src: 'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=600'
+        alt: 'Risotto'
+
+  - type: 'team'
+    title: 'Meet Our Team'
+    subtitle: 'Passionate people behind your dining experience'
+    members:
+      - name: 'Marco Rossi'
+        role: 'Executive Chef'
+        bio: 'Trained in Rome, Marco brings 20 years of culinary expertise.'
+        image: 'https://i.pravatar.cc/300?img=12'
+      - name: 'Sofia Bianchi'
+        role: 'Sous Chef'
+        bio: 'Specializing in traditional pasta and risotto dishes.'
+        image: 'https://i.pravatar.cc/300?img=5'
+      - name: 'Giovanni Russo'
+        role: 'Sommelier'
+        bio: 'Wine expert with deep knowledge of Italian vineyards.'
+        image: 'https://i.pravatar.cc/300?img=13'
+      - name: 'Elena Conti'
+        role: 'Pastry Chef'
+        bio: 'Creating authentic Italian desserts that melt in your mouth.'
+        image: 'https://i.pravatar.cc/300?img=9'
+
+  - type: 'testimonials'
+    title: 'What Our Guests Say'
+    subtitle: 'Real reviews from real diners'
+    items:
+      - quote: "The best Italian food outside of Italy! Every dish is perfection. The ambiance makes you feel like you're dining in Rome."
+        author: 'James Wilson'
+        role: 'Food Critic'
+        company: 'Taste Magazine'
+        avatar: 'https://i.pravatar.cc/150?img=14'
+      - quote: 'Bella Italia is our go-to for special occasions. The service is impeccable and the food is consistently outstanding.'
+        author: 'Maria Garcia'
+        role: 'Regular Guest'
+        company: ''
+        avatar: 'https://i.pravatar.cc/150?img=10'
+      - quote: 'From the homemade pasta to the tiramisu, everything is authentic and delicious. A true gem!'
+        author: 'David Kim'
+        role: 'Restaurant Reviewer'
+        company: 'City Food Guide'
+        avatar: 'https://i.pravatar.cc/150?img=15'
+
+  - type: 'cta'
+    title: 'Ready for an Unforgettable Meal?'
+    subtitle: 'Book your table today and experience authentic Italian cuisine'
+    cta:
+      primary:
+        text: 'Reserve Now'
+        href: '/signup'
+      secondary:
+        text: 'View Full Menu'
+        href: '/menu'
