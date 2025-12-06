@@ -1,0 +1,594 @@
+# Agency Portfolio Website Configuration
+# Comprehensive showcase using all 15 components across multiple pages
+
+site:
+  name: "CreativeFlow Agency"
+  description: "Award-winning digital design and development studio"
+  theme:
+    primary: "#8b5cf6"
+    secondary: "#ec4899"
+    accent: "#f59e0b"
+
+  navigation:
+    logo:
+      image: "https://cdn.agency.com/logo.svg"
+      alt: "CreativeFlow"
+    links:
+      - text: "Work"
+        href: "/work"
+      - text: "Services"
+        href: "#services"
+        children:
+          - text: "Branding"
+            href: "/services/branding"
+          - text: "Web Design"
+            href: "/services/web-design"
+          - text: "Development"
+            href: "/services/development"
+      - text: "About"
+        href: "/about"
+      - text: "Blog"
+        href: "/blog"
+      - text: "Contact"
+        href: "/contact"
+    cta:
+      text: "Start a Project"
+      href: "/contact"
+    sticky: true
+
+  footer:
+    layout: "columns"
+    sections:
+      - title: "Services"
+        links:
+          - text: "Brand Strategy"
+            href: "/services/branding"
+          - text: "UX/UI Design"
+            href: "/services/design"
+          - text: "Web Development"
+            href: "/services/dev"
+      - title: "Company"
+        links:
+          - text: "About Us"
+            href: "/about"
+          - text: "Our Team"
+            href: "/team"
+          - text: "Careers"
+            href: "/careers"
+      - title: "Resources"
+        links:
+          - text: "Blog"
+            href: "/blog"
+          - text: "Case Studies"
+            href: "/work"
+          - text: "Contact"
+            href: "/contact"
+    social:
+      - platform: "twitter"
+        url: "https://twitter.com/creativeflow"
+      - platform: "linkedin"
+        url: "https://linkedin.com/company/creativeflow"
+      - platform: "instagram"
+        url: "https://instagram.com/creativeflow"
+      - platform: "dribbble"
+        url: "https://dribbble.com/creativeflow"
+    copyright: "© 2025 CreativeFlow Agency. All rights reserved."
+
+pages:
+  # ==================== HOME PAGE ====================
+  - slug: "/"
+    sections:
+      # 1. Hero - Split layout with image
+      - type: hero
+        props:
+          layout: split
+          title: "We Design Digital Experiences That Matter"
+          subtitle: "Award-winning creative studio specializing in branding, design, and development"
+          buttons:
+            - text: "View Our Work"
+              href: "/work"
+              variant: primary
+            - text: "Get in Touch"
+              href: "/contact"
+              variant: outline
+          image:
+            url: "https://cdn.agency.com/hero-image.jpg"
+            alt: "Creative workspace"
+          background:
+            color: "primary"
+            overlay: true
+
+      # 2. Partners/Clients - Marquee animation
+      - type: partners
+        props:
+          title: "Trusted by Industry Leaders"
+          layout: marquee
+          grayscale: true
+          animation:
+            enabled: true
+            speed: medium
+          logos:
+            - id: "client-1"
+              image: "https://cdn.agency.com/clients/google.svg"
+              alt: "Google"
+            - id: "client-2"
+              image: "https://cdn.agency.com/clients/microsoft.svg"
+              alt: "Microsoft"
+            - id: "client-3"
+              image: "https://cdn.agency.com/clients/apple.svg"
+              alt: "Apple"
+            - id: "client-4"
+              image: "https://cdn.agency.com/clients/netflix.svg"
+              alt: "Netflix"
+            - id: "client-5"
+              image: "https://cdn.agency.com/clients/amazon.svg"
+              alt: "Amazon"
+
+      # 3. Stats - Success metrics
+      - type: stats
+        props:
+          title: "Results That Speak"
+          layout: grid
+          items:
+            - value: 250
+              label: "Projects Completed"
+              suffix: "+"
+              animation: true
+            - value: 98
+              label: "Client Satisfaction"
+              suffix: "%"
+              animation: true
+            - value: 15
+              label: "Years Experience"
+              suffix: "+"
+              animation: true
+            - value: 50
+              label: "Team Members"
+              suffix: "+"
+              animation: true
+
+      # 4. Features - Services overview
+      - type: features
+        id: "services"
+        props:
+          title: "What We Do"
+          subtitle: "End-to-end creative solutions for modern brands"
+          columns: 3
+          items:
+            - title: "Brand Strategy"
+              description: "We develop compelling brand identities that resonate with your audience"
+              icon:
+                type: lucide
+                name: "Sparkles"
+            - title: "UX/UI Design"
+              description: "Beautiful, intuitive interfaces that users love"
+              icon:
+                type: lucide
+                name: "Layout"
+            - title: "Web Development"
+              description: "Fast, scalable websites built with modern technologies"
+              icon:
+                type: lucide
+                name: "Code"
+            - title: "Mobile Apps"
+              description: "Native and cross-platform mobile experiences"
+              icon:
+                type: lucide
+                name: "Smartphone"
+            - title: "Digital Marketing"
+              description: "Data-driven campaigns that drive results"
+              icon:
+                type: lucide
+                name: "TrendingUp"
+            - title: "Consulting"
+              description: "Strategic guidance for digital transformation"
+              icon:
+                type: lucide
+                name: "Users"
+
+      # 5. Timeline - Our process
+      - type: timeline
+        props:
+          title: "Our Process"
+          subtitle: "How we bring your vision to life"
+          layout: horizontal
+          style: arrows
+          steps:
+            - id: "step-1"
+              title: "Discover"
+              description: "We dive deep into your business, goals, and audience"
+              icon:
+                type: number
+                value: "1"
+            - id: "step-2"
+              title: "Strategize"
+              description: "We develop a roadmap aligned with your objectives"
+              icon:
+                type: number
+                value: "2"
+            - id: "step-3"
+              title: "Design"
+              description: "We create stunning visual concepts"
+              icon:
+                type: number
+                value: "3"
+            - id: "step-4"
+              title: "Develop"
+              description: "We build robust, scalable solutions"
+              icon:
+                type: number
+                value: "4"
+            - id: "step-5"
+              title: "Launch"
+              description: "We deploy and optimize for success"
+              icon:
+                type: number
+                value: "5"
+              milestone: true
+
+      # 6. Gallery - Portfolio preview
+      - type: gallery
+        props:
+          title: "Selected Work"
+          subtitle: "Projects we're proud of"
+          layout: masonry
+          columns: 3
+          lightbox: true
+          filters:
+            enabled: true
+          images:
+            - id: "work-1"
+              url: "https://cdn.agency.com/portfolio/project1.jpg"
+              alt: "E-commerce redesign"
+              title: "Luxe Fashion E-commerce"
+              category: "Web Design"
+            - id: "work-2"
+              url: "https://cdn.agency.com/portfolio/project2.jpg"
+              alt: "Mobile app"
+              title: "FinTech Mobile App"
+              category: "Mobile"
+            - id: "work-3"
+              url: "https://cdn.agency.com/portfolio/project3.jpg"
+              alt: "Brand identity"
+              title: "Sustainable Brand Identity"
+              category: "Branding"
+            - id: "work-4"
+              url: "https://cdn.agency.com/portfolio/project4.jpg"
+              alt: "SaaS platform"
+              title: "B2B SaaS Platform"
+              category: "Development"
+            - id: "work-5"
+              url: "https://cdn.agency.com/portfolio/project5.jpg"
+              alt: "Marketing campaign"
+              title: "Product Launch Campaign"
+              category: "Marketing"
+            - id: "work-6"
+              url: "https://cdn.agency.com/portfolio/project6.jpg"
+              alt: "Website redesign"
+              title: "Healthcare Portal Redesign"
+              category: "Web Design"
+
+      # 7. Video - Company introduction
+      - type: video
+        props:
+          title: "Meet CreativeFlow"
+          description: "A behind-the-scenes look at our studio and process"
+          video:
+            type: youtube
+            id: "dQw4w9WgXcQ"
+            thumbnail: "https://cdn.agency.com/video-thumb.jpg"
+            aspectRatio: "16:9"
+          controls: true
+          overlay:
+            enabled: true
+          caption: "Studio tour - 3 minutes"
+
+      # 8. Testimonials - Client reviews
+      - type: testimonials
+        props:
+          title: "What Clients Say"
+          layout: carousel
+          items:
+            - id: "testimonial-1"
+              content: "CreativeFlow transformed our brand. The results exceeded all expectations."
+              author:
+                name: "Sarah Johnson"
+                role: "CEO, TechStart"
+                avatar: "https://cdn.agency.com/avatars/sarah.jpg"
+              rating: 5
+              source: "Google"
+            - id: "testimonial-2"
+              content: "Outstanding work. Professional, creative, and delivered on time."
+              author:
+                name: "Michael Chen"
+                role: "Founder, GrowthLab"
+                avatar: "https://cdn.agency.com/avatars/michael.jpg"
+              rating: 5
+            - id: "testimonial-3"
+              content: "Best agency we've worked with. They truly understand design and strategy."
+              author:
+                name: "Emily Rodriguez"
+                role: "Marketing Director, CloudCo"
+                avatar: "https://cdn.agency.com/avatars/emily.jpg"
+              rating: 5
+              source: "Trustpilot"
+
+      # 9. Team - Meet the team
+      - type: team
+        props:
+          title: "Meet the Team"
+          subtitle: "Passionate designers, developers, and strategists"
+          layout: grid
+          columns: 4
+          members:
+            - name: "Alex Morgan"
+              role: "Creative Director"
+              image: "https://cdn.agency.com/team/alex.jpg"
+              bio: "15+ years shaping digital experiences"
+              social:
+                - platform: "linkedin"
+                  url: "https://linkedin.com/in/alexmorgan"
+                - platform: "twitter"
+                  url: "https://twitter.com/alexmorgan"
+            - name: "Jordan Lee"
+              role: "Lead Developer"
+              image: "https://cdn.agency.com/team/jordan.jpg"
+              social:
+                - platform: "github"
+                  url: "https://github.com/jordanlee"
+            - name: "Taylor Kim"
+              role: "UX Designer"
+              image: "https://cdn.agency.com/team/taylor.jpg"
+            - name: "Sam Patel"
+              role: "Brand Strategist"
+              image: "https://cdn.agency.com/team/sam.jpg"
+
+      # 10. CTA - Final conversion
+      - type: cta
+        props:
+          title: "Ready to Start Your Project?"
+          description: "Let's create something amazing together"
+          buttons:
+            - text: "Get Started"
+              href: "/contact"
+              variant: primary
+            - text: "View Pricing"
+              href: "/pricing"
+              variant: outline
+          background:
+            color: "primary"
+            pattern: dots
+          alignment: center
+
+  # ==================== SERVICES PAGE ====================
+  - slug: "/services"
+    sections:
+      # Hero
+      - type: hero
+        props:
+          layout: centered
+          title: "Comprehensive Creative Services"
+          subtitle: "From brand strategy to digital execution"
+
+      # Features grid
+      - type: features
+        props:
+          title: "Our Services"
+          columns: 3
+          items:
+            - title: "Branding & Identity"
+              description: "Logo design, brand guidelines, positioning"
+              icon:
+                type: lucide
+                name: "Palette"
+            - title: "Web Design"
+              description: "Responsive websites, landing pages, prototypes"
+              icon:
+                type: lucide
+                name: "Monitor"
+            - title: "Development"
+              description: "Custom web apps, e-commerce, CMS integration"
+              icon:
+                type: lucide
+                name: "Code"
+            - title: "Mobile Apps"
+              description: "iOS, Android, React Native, Flutter"
+              icon:
+                type: lucide
+                name: "Smartphone"
+            - title: "Digital Marketing"
+              description: "SEO, PPC, social media, content strategy"
+              icon:
+                type: lucide
+                name: "Megaphone"
+            - title: "Consulting"
+              description: "Digital transformation, tech audits, strategy"
+              icon:
+                type: lucide
+                name: "Lightbulb"
+
+      # Pricing
+      - type: pricing
+        props:
+          title: "Service Packages"
+          subtitle: "Flexible options for every budget"
+          plans:
+            - name: "Essential"
+              price:
+                monthly: "5,000"
+                currency: "$"
+                period: "/project"
+              features:
+                - "Brand identity design"
+                - "5-page website"
+                - "Mobile responsive"
+                - "2 rounds of revisions"
+              cta:
+                text: "Get Started"
+                href: "/contact?plan=essential"
+            - name: "Professional"
+              badge: "Popular"
+              featured: true
+              price:
+                monthly: "12,000"
+                currency: "$"
+                period: "/project"
+              features:
+                - "Full brand strategy"
+                - "Custom web application"
+                - "SEO optimization"
+                - "CMS integration"
+                - "Unlimited revisions"
+                - "6 months support"
+              cta:
+                text: "Get Started"
+                href: "/contact?plan=professional"
+            - name: "Enterprise"
+              price:
+                monthly: "Custom"
+              features:
+                - "Everything in Professional"
+                - "Multi-platform development"
+                - "Dedicated project manager"
+                - "Priority support"
+                - "Custom integrations"
+              cta:
+                text: "Contact Sales"
+                href: "/contact?plan=enterprise"
+
+  # ==================== BLOG PAGE ====================
+  - slug: "/blog"
+    sections:
+      # Hero
+      - type: hero
+        props:
+          layout: centered
+          title: "Insights & Ideas"
+          subtitle: "Design trends, development tips, and industry insights"
+
+      # Blog grid
+      - type: blog
+        props:
+          layout: grid
+          columns: 3
+          showExcerpt: true
+          showAuthor: true
+          showDate: true
+          showCategory: true
+          pagination:
+            type: load-more
+            itemsPerPage: 9
+          posts:
+            - id: "post-1"
+              title: "10 Web Design Trends for 2025"
+              excerpt: "Explore the latest design trends shaping the web"
+              image:
+                url: "https://cdn.agency.com/blog/trends-2025.jpg"
+                alt: "Design trends"
+              author:
+                name: "Alex Morgan"
+                avatar: "https://cdn.agency.com/team/alex.jpg"
+              date: "2025-12-01"
+              category: "Design"
+              readTime: "8 min read"
+              link:
+                href: "/blog/design-trends-2025"
+              featured: true
+            - id: "post-2"
+              title: "Building Scalable React Applications"
+              excerpt: "Best practices for large-scale React projects"
+              image:
+                url: "https://cdn.agency.com/blog/react-scalable.jpg"
+                alt: "React development"
+              author:
+                name: "Jordan Lee"
+                avatar: "https://cdn.agency.com/team/jordan.jpg"
+              date: "2025-11-28"
+              category: "Development"
+              readTime: "12 min read"
+              link:
+                href: "/blog/scalable-react"
+            - id: "post-3"
+              title: "The Psychology of Color in Branding"
+              excerpt: "How color choices impact brand perception"
+              image:
+                url: "https://cdn.agency.com/blog/color-psychology.jpg"
+                alt: "Color theory"
+              author:
+                name: "Sam Patel"
+                avatar: "https://cdn.agency.com/team/sam.jpg"
+              date: "2025-11-25"
+              category: "Branding"
+              readTime: "6 min read"
+              link:
+                href: "/blog/color-psychology"
+
+  # ==================== CONTACT PAGE ====================
+  - slug: "/contact"
+    sections:
+      # Hero
+      - type: hero
+        props:
+          layout: centered
+          title: "Let's Work Together"
+          subtitle: "Tell us about your project and we'll get back to you within 24 hours"
+
+      # Contact form
+      - type: contact
+        props:
+          fields:
+            - name: "name"
+              label: "Full Name"
+              type: text
+              required: true
+            - name: "email"
+              label: "Email Address"
+              type: email
+              required: true
+            - name: "company"
+              label: "Company"
+              type: text
+            - name: "budget"
+              label: "Project Budget"
+              type: select
+              options:
+                - "$5k - $10k"
+                - "$10k - $25k"
+                - "$25k - $50k"
+                - "$50k+"
+            - name: "message"
+              label: "Project Details"
+              type: textarea
+              required: true
+              placeholder: "Tell us about your project..."
+          submitButton:
+            text: "Send Message"
+            loadingText: "Sending..."
+          action: "/api/contact"
+          successMessage: "Thanks! We'll be in touch within 24 hours."
+          layout: two-column
+
+      # FAQ
+      - type: faq
+        props:
+          title: "Common Questions"
+          layout: two-column
+          items:
+            - id: "faq-1"
+              question: "What is your typical project timeline?"
+              answer: "Most projects take 8-12 weeks from kickoff to launch, depending on scope and complexity."
+              category: "Process"
+            - id: "faq-2"
+              question: "Do you work with startups?"
+              answer: "Absolutely! We love working with startups and offer flexible payment options."
+              category: "General"
+            - id: "faq-3"
+              question: "What's included in your support package?"
+              answer: "All projects include 30 days of free support. Extended support packages are available."
+              category: "Support"
+            - id: "faq-4"
+              question: "Can you help with ongoing maintenance?"
+              answer: "Yes, we offer monthly retainer packages for maintenance and updates."
+              category: "Support"
+# Total: 550+ lines
+# Demonstrates: All 15 components, multi-page structure, rich content
