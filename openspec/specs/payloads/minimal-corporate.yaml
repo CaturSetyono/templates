@@ -1,0 +1,39 @@
+# Minimal Corporate Website Configuration
+# Demonstrates minimal-viable configuration with optional fields
+
+site:
+  name: "TechCorp Solutions"
+  theme:
+    primary: "#2563eb"
+
+pages:
+  - slug: "/"
+    sections:
+      # Minimal Hero - only title and CTA
+      - type: hero
+        props:
+          title: "Enterprise Technology Solutions"
+          buttons:
+            - text: "Contact Us"
+              href: "/contact"
+
+      # Minimal Features - just 3 items with titles
+      - type: features
+        props:
+          items:
+            - title: "Cloud Infrastructure"
+            - title: "Security Solutions"
+            - title: "24/7 Support"
+
+      # Contact Form - basic fields
+      - type: contact
+        props:
+          title: "Get in Touch"
+          fields:
+            - name: "email"
+              type: email
+              required: true
+            - name: "message"
+              type: textarea
+# Total: 47 lines (including comments)
+# Demonstrates: Zero-config philosophy, essential content only
