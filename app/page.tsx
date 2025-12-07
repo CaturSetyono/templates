@@ -1,60 +1,16 @@
 import { ComponentRenderer } from '@/components/component-renderer';
 import { SkeletonView } from '@/components/skeleton-view';
 import { ConfigWatcher } from '@/components/config-watcher';
-import type { PageConfig, SiteConfig, BaseSection } from '@/types';
+import type { PageConfig, SiteConfig } from '@/types';
 import { generateThemeVars } from '@/lib/utils';
-import fs from 'fs';
-import path from 'path';
-import yaml from 'js-yaml';
-
-// Load configuration from YAML file
-interface YAMLConfig {
-  site: SiteConfig;
-  pages?: PageConfig[];
-  sections?: BaseSection[]; // New structure: direct sections
-}
-
-async function loadConfig(): Promise<YAMLConfig | null> {
-  const configPath = path.join(process.cwd(), 'config', 'config.yaml');
-
-  try {
-    if (fs.existsSync(configPath)) {
-      const fileContents = fs.readFileSync(configPath, 'utf8');
-      const config = yaml.load(fileContents) as YAMLConfig;
-      return config;
-    }
-  } catch (error) {
-    console.error('Error loading config:', error);
-  }
-  return null;
-}
+import { loadSiteConfig, loadPageConfig } from '@/lib/config-loader';
 
 async function getPageConfig(slug: string): Promise<PageConfig | null> {
-  const config = await loadConfig();
-  if (!config) return null;
-
-  // Support old structure with pages array
-  if (config.pages && Array.isArray(config.pages)) {
-    const page = config.pages.find((p) => p.slug === slug);
-    return page || null;
-  }
-
-  // Support new structure with direct sections (for home page)
-  if (config.sections && slug === '/') {
-    return {
-      slug: '/',
-      title: 'Home',
-      description: config.site.description || '',
-      sections: config.sections
-    };
-  }
-
-  return null;
+  return loadPageConfig(slug);
 }
 
 async function getSiteConfig(): Promise<SiteConfig | null> {
-  const config = await loadConfig();
-  return config ? config.site : null;
+  return loadSiteConfig();
 }
 
 export default async function HomePage() {
