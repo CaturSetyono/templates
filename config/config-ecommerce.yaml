@@ -1,232 +1,384 @@
 site:
-  name: 'StyleHub'
-  description: 'Premium fashion and lifestyle online store'
+  name: 'ShopHub'
+  description: 'Your premium online shopping destination'
   theme:
-    primary: '#0ea5e9' # Sky 500
-    secondary: '#f43f5e' # Rose 500
-    accent: '#18181b' # Zinc 900
+    primary: '#8b5cf6' # Violet 500
+    secondary: '#f97316' # Orange 500
+    accent: '#1e293b' # Slate 800
   navigation:
     logo:
-      text: 'StyleHub'
+      text: 'ShopHub'
     links:
-      - text: 'Shop'
+      - text: 'Categories'
+        href: '#features'
+      - text: 'Deals'
+        href: '#stats'
+      - text: 'More'
         href: '#'
         children:
-          - text: 'New Arrivals'
-            href: '/shop/new'
-          - text: 'Women'
-            href: '/shop/women'
-          - text: 'Men'
-            href: '/shop/men'
-          - text: 'Accessories'
-            href: '/shop/accessories'
-      - text: 'Collections'
-        href: '#collections'
-      - text: 'Sale'
-        href: '/sale'
+          - text: 'Shopping Guide'
+            href: '/docs'
+          - text: 'Customer Reviews'
+            href: '/blog'
       - text: 'About'
         href: '/about'
-      - text: 'Contact'
-        href: '/contact'
     cta:
       text: 'Shop Now'
-      href: '/shop'
+      href: '/signup'
   footer:
     logo:
-      text: 'StyleHub'
-    tagline: 'Curating timeless style and modern elegance for the conscious consumer.'
-    copyright: '© 2025 StyleHub. All rights reserved.'
+      text: 'ShopHub'
+    tagline: 'Discover amazing products from trusted sellers worldwide with fast shipping and secure payments.'
+    copyright: ' 2025 ShopHub Commerce. All rights reserved.'
     sections:
       - title: 'Shop'
         links:
-          - text: 'New Arrivals'
-            href: '/shop/new'
+          - text: 'All Products'
+            href: '#features'
           - text: 'Best Sellers'
-            href: '/shop/bestsellers'
-          - text: 'Sale Items'
-            href: '/sale'
-      - title: 'Customer Care'
-        links:
-          - text: 'Shipping & Returns'
-            href: '/shipping'
-          - text: 'Size Guide'
-            href: '/size-guide'
-          - text: 'FAQs'
-            href: '/faq'
+            href: '#stats'
+          - text: 'Daily Deals'
+            href: '/security'
       - title: 'Company'
         links:
           - text: 'About Us'
             href: '/about'
-          - text: 'Sustainability'
-            href: '/sustainability'
+          - text: 'Careers'
+            href: '/careers'
           - text: 'Contact'
             href: '/contact'
+      - title: 'Support'
+        links:
+          - text: 'Help Center'
+            href: '/docs'
+          - text: 'Shipping Info'
+            href: '/api'
+          - text: 'Track Order'
+            href: '/status'
+    social:
+      - platform: 'youtube'
+        url: 'https://youtube.com/shophub'
+      - platform: 'linkedin'
+        url: 'https://linkedin.com/company/shophub'
+      - platform: 'twitter'
+        url: 'https://twitter.com/shophub'
 
-sections:
-  - type: 'hero'
-    alignment: 'center'
-    title: 'Discover Your Style, Define Your Story'
-    subtitle: 'Premium fashion and accessories curated for the modern lifestyle. Quality craftsmanship meets contemporary design.'
-    cta:
-      primary:
-        text: 'Shop New Arrivals'
-        href: '/shop/new'
-      secondary:
-        text: 'Explore Collections'
-        href: '#collections'
-    image:
-      src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200'
-      alt: 'Fashion model'
+pages:
+  - slug: '/'
+    title: 'Home'
+    description: 'ShopHub - Shop Smart, Live Better'
+    sections:
+      - type: 'hero'
+        id: 'hero'
+        props:
+          layout: 'centered'
+          title: 'Shop the Latest Trends'
+          subtitle: 'Discover millions of products from trusted sellers. Free shipping on orders over $50. Shop with confidence with our buyer protection guarantee.'
+          buttons:
+            - text: 'Start Shopping'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'Browse Deals'
+              href: '#features'
+              variant: 'outline'
+          trustIndicators:
+            - '10M+ Happy Customers'
+            - '50M+ Products'
+            - 'Free Returns'
+          background:
+            gradient: 'from-violet-50 via-white to-orange-50'
+          image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000'
 
-  - type: 'logo-cloud'
-    title: 'As featured in'
-    logos:
-      - name: 'Vogue'
-        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=VOGUE'
-      - name: 'Elle'
-        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=ELLE'
-      - name: 'GQ'
-        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=GQ'
-      - name: "Harper's Bazaar"
-        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=BAZAAR'
-      - name: 'InStyle'
-        src: 'https://via.placeholder.com/150x50/0ea5e9/ffffff?text=InStyle'
+      - type: 'features'
+        id: 'features'
+        props:
+          title: 'Shop by Category'
+          subtitle: 'Find exactly what you are looking for in our curated collections.'
+          columns: 3
+          items:
+            - id: 'f1'
+              title: 'Electronics'
+              description: 'Latest smartphones, laptops, cameras, and tech accessories.'
+              icon:
+                value: '📱'
+            - id: 'f2'
+              title: 'Fashion'
+              description: 'Trendy clothing, shoes, and accessories for men and women.'
+              icon:
+                value: '👗'
+            - id: 'f3'
+              title: 'Home & Living'
+              description: 'Furniture, decor, kitchen essentials, and home improvement.'
+              icon:
+                value: '🏠'
+            - id: 'f4'
+              title: 'Beauty & Health'
+              description: 'Skincare, makeup, supplements, and wellness products.'
+              icon:
+                value: '💄'
+            - id: 'f5'
+              title: 'Sports & Outdoors'
+              description: 'Fitness equipment, outdoor gear, and athletic apparel.'
+              icon:
+                value: '⚽'
+            - id: 'f6'
+              title: 'Books & Media'
+              description: 'Books, movies, music, and digital entertainment.'
+              icon:
+                value: '📚'
 
-  - type: 'stats'
-    title: 'Why Shop with Us'
-    items:
-      - value: '100K+'
-        label: 'Happy Customers'
-      - value: '5000+'
+      - type: 'stats'
+        id: 'stats'
+        props:
+          background: 'bg-violet-900'
+          items:
+            - id: 's1'
+              value: '10M+'
+              label: 'Happy Customers'
+            - id: 's2'
+              value: '50M+'
+              label: 'Products'
+            - id: 's3'
+              value: '99%'
+              label: 'Satisfaction Rate'
+            - id: 's4'
+              value: '4.8/5'
+              label: 'Customer Rating'
+
+      - type: 'testimonials'
+        id: 'testimonials'
+        props:
+          title: 'What Our Customers Say'
+          subtitle: 'Real reviews from real shoppers.'
+          trustBadge: 'Join 10 million satisfied customers shopping with confidence'
+          items:
+            - id: 't1'
+              content: 'Best online shopping experience! Fast delivery, great prices, and excellent customer service. Highly recommended!'
+              rating: 5
+              author:
+                name: 'Amanda Lee'
+                role: 'Verified Buyer'
+            - id: 't2'
+              content: 'Found exactly what I needed at an amazing price. The product quality exceeded my expectations. Will shop again!'
+              rating: 5
+              author:
+                name: 'Robert Chen'
+                role: 'Verified Buyer'
+            - id: 't3'
+              content: 'Love the variety of products and the easy checkout process. Returns are hassle-free too. My go-to shopping site!'
+              rating: 5
+              author:
+                name: 'Maria Garcia'
+                role: 'Verified Buyer'
+
+  - slug: '/blog'
+    title: 'Blog'
+    description: 'Shopping tips, product reviews, and trends'
+    hero:
+      title: 'ShopHub Blog'
+      subtitle: 'Shopping guides, product reviews, and the latest trends in retail'
+    categories:
+      - 'All'
+      - 'Product Reviews'
+      - 'Shopping Tips'
+      - 'Trends'
+      - 'Deals'
+      - 'Gift Ideas'
+    posts:
+      - id: 1
+        title: 'Top 10 Must-Have Gadgets for 2024'
+        excerpt: 'Discover the latest tech gadgets that will make your life easier and more enjoyable.'
+        category: 'Product Reviews'
+        date: '15 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+      - id: 2
+        title: 'How to Find the Best Deals Online'
+        excerpt: 'Expert tips and tricks to save money on your online shopping purchases.'
+        category: 'Shopping Tips'
+        date: '10 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=800'
+        readTime: '5 min'
+      - id: 3
+        title: 'Spring Fashion Trends You Need to Know'
+        excerpt: 'Stay ahead of the curve with these must-have fashion items for the season.'
+        category: 'Trends'
+        date: '5 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800'
+        readTime: '7 min'
+      - id: 4
+        title: 'Ultimate Gift Guide for Every Occasion'
+        excerpt: 'Find the perfect gift for birthdays, holidays, and special celebrations.'
+        category: 'Gift Ideas'
+        date: '1 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=800'
+        readTime: '8 min'
+      - id: 5
+        title: 'Black Friday Preview: Best Deals Coming Soon'
+        excerpt: 'Get ready for the biggest shopping event of the year with our exclusive preview.'
+        category: 'Deals'
+        date: '28 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+      - id: 6
+        title: 'Sustainable Shopping: Eco-Friendly Products'
+        excerpt: 'Discover environmentally conscious products that are good for you and the planet.'
+        category: 'Shopping Tips'
+        date: '20 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800'
+        readTime: '5 min'
+    newsletter:
+      title: 'Get Exclusive Deals'
+      description: 'Subscribe to receive special offers, new arrivals, and shopping tips'
+      placeholder: 'Your Email'
+      buttonText: 'Subscribe'
+
+  - slug: '/about'
+    title: 'About Us'
+    description: 'Learn more about our mission and team'
+    hero:
+      title: 'About ShopHub'
+      subtitle: 'Since 2018, ShopHub has been connecting millions of shoppers with quality products from trusted sellers worldwide, making online shopping safe, easy, and enjoyable.'
+    stats:
+      - value: '6+'
+        label: 'Years in Business'
+      - value: '10M+'
+        label: 'Customers'
+      - value: '50M+'
         label: 'Products'
-      - value: '4.8★'
-        label: 'Average Rating'
-      - value: '50+'
-        label: 'Countries Shipped'
+      - value: '4.8/5'
+        label: 'Rating'
+    mission:
+      title: 'Our Mission'
+      description: 'To create the worlds most customer-centric online marketplace where people can find and discover anything they want to buy online.'
+      icon: 'vision'
+      gradient: 'from-violet-600 to-violet-700'
+    vision:
+      title: 'Our Vision'
+      description: 'To revolutionize e-commerce by providing unparalleled selection, competitive prices, and exceptional customer service through innovative technology.'
+      icon: 'mission'
+      gradient: 'from-orange-600 to-orange-700'
+    values:
+      title: 'Our Values'
+      subtitle: 'Principles that guide our business decisions'
+      items:
+        - title: 'Customer First'
+          description: 'Every decision we make starts with the customer in mind.'
+          icon: 'check'
+        - title: 'Trust & Safety'
+          description: 'Ensuring secure transactions and authentic products always.'
+          icon: 'lightning'
+        - title: 'Innovation'
+          description: 'Continuously improving the shopping experience through technology.'
+          icon: 'users'
+        - title: 'Sustainability'
+          description: 'Committed to environmentally responsible business practices.'
+          icon: 'globe'
+    team:
+      title: 'Leadership Team'
+      subtitle: 'Experienced leaders driving e-commerce innovation'
+      members:
+        - name: 'Jennifer Park'
+          role: 'CEO & Founder'
+          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Kevin Zhang'
+          role: 'Chief Technology Officer'
+          image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400'
+        - name: 'Rachel Martinez'
+          role: 'Chief Operating Officer'
+          image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Daniel Kim'
+          role: 'Head of Customer Experience'
+          image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400'
 
-  - type: 'features'
-    layout: 'grid'
-    title: 'The StyleHub Experience'
-    subtitle: 'Shopping made simple, elegant, and sustainable'
-    items:
-      - icon: '🚚'
-        title: 'Free Worldwide Shipping'
-        description: 'Free express shipping on all orders over $100. Fast, tracked delivery to your door.'
-      - icon: '🔄'
-        title: 'Easy Returns'
-        description: '30-day hassle-free returns. Not in love? Send it back for free, no questions asked.'
-      - icon: '♻️'
-        title: 'Sustainable Fashion'
-        description: 'Ethically sourced materials and eco-friendly production. Style with a conscience.'
-      - icon: '✨'
-        title: 'Premium Quality'
-        description: 'Handpicked pieces that blend craftsmanship with contemporary design.'
-      - icon: '💳'
-        title: 'Secure Checkout'
-        description: 'Shop safely with encrypted transactions and multiple payment options.'
-      - icon: '📱'
-        title: 'Shop on the Go'
-        description: 'Seamless mobile experience. Browse and buy from anywhere, anytime.'
+  - slug: '/docs'
+    title: 'Documentation'
+    description: 'Shopping guides and help center'
+    hero:
+      title: 'Help Center & Shopping Guides'
+      subtitle: 'Everything you need to know about shopping on ShopHub'
+    guides:
+      - title: 'Getting Started'
+        description: 'Learn how to create an account, browse products, and place your first order.'
+        icon: 'code'
+        topics:
+          - 'Account Setup'
+          - 'Browsing Products'
+          - 'Checkout Process'
+      - title: 'Payment & Shipping'
+        description: 'Information about payment methods, shipping options, and delivery times.'
+        icon: 'chart'
+        topics:
+          - 'Payment Methods'
+          - 'Shipping Options'
+          - 'International Orders'
+      - title: 'Returns & Refunds'
+        description: 'Our hassle-free return policy and refund process explained.'
+        icon: 'palette'
+        topics:
+          - 'Return Policy'
+          - 'Refund Process'
+          - 'Exchange Items'
+      - title: 'Buyer Protection'
+        description: 'How we protect your purchases and ensure safe transactions.'
+        icon: 'briefcase'
+        topics:
+          - 'Purchase Protection'
+          - 'Dispute Resolution'
+          - 'Fraud Prevention'
+      - title: 'Seller Information'
+        description: 'Learn about our verified sellers and quality standards.'
+        icon: 'rocket'
+        topics:
+          - 'Seller Verification'
+          - 'Quality Standards'
+          - 'Seller Ratings'
+      - title: 'Account Management'
+        description: 'Manage your profile, addresses, payment methods, and preferences.'
+        icon: 'book'
+        topics:
+          - 'Profile Settings'
+          - 'Saved Addresses'
+          - 'Order History'
 
-  - type: 'gallery'
-    title: 'Featured Collections'
-    subtitle: 'Explore our curated seasonal selections'
-    images:
-      - src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600'
-        alt: 'Fashion accessories'
-      - src: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600'
-        alt: "Women's clothing"
-      - src: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600'
-        alt: "Men's fashion"
-      - src: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600'
-        alt: 'Shoes collection'
-      - src: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600'
-        alt: 'Jewelry'
-      - src: 'https://images.unsplash.com/photo-1558769132-cb1aea8f762?w=600'
-        alt: 'Handbags'
+  - slug: '/status'
+    title: 'Order Tracking'
+    description: 'Track your orders in real-time'
+    hero:
+      title: 'Track Your Order'
+      subtitle: 'Monitor your package delivery status in real-time'
+    searchPlaceholder: 'Enter your Order ID or Email'
+    searchButton: 'Track'
+    recentTitle: 'Recent Orders'
+    statuses:
+      - orderId: 'SH-2024-001'
+        customer: 'Sarah Johnson'
+        location: 'New York, USA'
+        status: 'In Transit'
+        estimatedArrival: 'Arrives Dec 10'
+        progress: 75
+      - orderId: 'SH-2024-002'
+        customer: 'Tom Wilson'
+        location: 'London, UK'
+        status: 'Processing'
+        estimatedArrival: 'Ships Dec 9'
+        progress: 40
+      - orderId: 'SH-2024-003'
+        customer: 'Lisa Chen'
+        location: 'Singapore'
+        status: 'Delivered'
+        estimatedArrival: 'Delivered'
+        progress: 100
 
-  - type: 'content'
-    title: 'Sustainable Fashion for a Better Future'
-    subtitle: "Style shouldn't cost the earth"
-    content: |
-      At StyleHub, we believe fashion can be both beautiful and responsible. That's why we're committed to sustainability at every step:
-
-      **Ethical Sourcing** - We partner with suppliers who share our values, ensuring fair wages and safe working conditions.
-
-      **Eco-Friendly Materials** - From organic cotton to recycled fabrics, we choose materials that minimize environmental impact.
-
-      **Circular Fashion** - Our take-back program gives your pre-loved items a second life through resale or recycling.
-
-      **Carbon Neutral Shipping** - We offset 100% of shipping emissions and use recyclable packaging.
-
-      Every purchase supports our mission to create a more sustainable fashion industry. Together, we can make a difference.
-    image:
-      src: 'https://images.unsplash.com/photo-1558769132-cb1aea8f762f?w=800'
-      alt: 'Sustainable fashion'
-      position: 'left'
-
-  - type: 'grid'
-    title: 'Shop by Category'
-    subtitle: "Find exactly what you're looking for"
-    items:
-      - title: "Women's Collection"
-        description: 'Elegant dresses, tops, and more'
-        image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400'
-        link: '/shop/women'
-      - title: "Men's Collection"
-        description: 'Contemporary style for modern men'
-        image: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400'
-        link: '/shop/men'
-      - title: 'Accessories'
-        description: 'Complete your look'
-        image: 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=400'
-        link: '/shop/accessories'
-      - title: 'New Arrivals'
-        description: 'Fresh styles just in'
-        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400'
-        link: '/shop/new'
-
-  - type: 'testimonials'
-    title: 'Customer Reviews'
-    subtitle: 'What our customers are saying'
-    items:
-      - quote: "Best online shopping experience ever! The quality is outstanding and shipping was super fast. I'll definitely be ordering again."
-        author: 'Jessica Williams'
-        role: 'Verified Buyer'
-        company: ''
-        avatar: 'https://i.pravatar.cc/150?img=16'
-      - quote: 'Love that StyleHub focuses on sustainability. The clothes are beautiful and I feel good about my purchases. Highly recommend!'
-        author: 'Daniel Chen'
-        role: 'Verified Buyer'
-        company: ''
-        avatar: 'https://i.pravatar.cc/150?img=17'
-      - quote: 'The fit is perfect and the materials feel premium. Customer service was also very helpful when I had questions about sizing.'
-        author: 'Amanda Foster'
-        role: 'Verified Buyer'
-        company: ''
-        avatar: 'https://i.pravatar.cc/150?img=18'
-
-  - type: 'faq'
-    title: 'Frequently Asked Questions'
-    items:
-      - question: 'What is your return policy?'
-        answer: 'We offer a 30-day return policy on all items. Items must be unworn, unwashed, and in original condition with tags attached. Returns are free and easy through our returns portal.'
-      - question: 'How long does shipping take?'
-        answer: 'Standard shipping takes 5-7 business days. Express shipping (2-3 days) is available at checkout. International orders typically arrive within 7-14 business days.'
-      - question: 'Do you ship internationally?'
-        answer: 'Yes! We ship to over 50 countries worldwide. Shipping costs and delivery times vary by location and are calculated at checkout.'
-      - question: 'How do I find my size?'
-        answer: "Check our detailed size guide for measurements. If you're between sizes, we recommend sizing up. Our customer service team is also happy to help!"
-      - question: 'Are your products sustainable?'
-        answer: 'Yes! We prioritize sustainable materials, ethical production, and carbon-neutral shipping. Learn more on our Sustainability page.'
-
-  - type: 'cta'
-    title: 'Join the StyleHub Community'
-    subtitle: 'Sign up for exclusive offers, style tips, and early access to new collections'
-    cta:
-      primary:
-        text: 'Shop Now'
-        href: '/shop'
-      secondary:
-        text: 'Subscribe to Newsletter'
-        href: '/newsletter'
+  - slug: '/api'
+    title: 'Shipping Calculator'
+    description: 'Calculate shipping costs'
+    hero:
+      title: 'Shipping Cost Calculator'
+      subtitle: 'Calculate shipping costs for your orders quickly and accurately'
+    comingSoon:
+      title: 'Feature Coming Soon'
+      description: 'Our interactive shipping calculator is under development. Soon you can calculate exact shipping costs based on destination, weight, and delivery speed.'
+      icon: 'calculator'
+      buttonText: 'Contact Support'
+      buttonHref: '/signup'
