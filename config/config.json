@@ -1,0 +1,450 @@
+{
+  "site": {
+    "name": "Modern Portfolio",
+    "description": "A sleek, modern portfolio website to showcase your work, skills, and achievements with a professional touch.",
+    "theme": {
+      "primary": "#3b82f6",
+      "secondary": "#1f2937",
+      "accent": "#22c55e"
+    },
+    "navigation": {
+      "logo": {
+        "text": "Portfolio"
+      },
+      "links": [
+        {
+          "text": "Home",
+          "href": "/"
+        },
+        {
+          "text": "About",
+          "href": "/about"
+        },
+        {
+          "text": "Services",
+          "href": "#services"
+        },
+        {
+          "text": "Portfolio",
+          "href": "#portfolio"
+        },
+        {
+          "text": "Contact",
+          "href": "#contact"
+        },
+        {
+          "text": "Blog",
+          "href": "/blog"
+        },
+        {
+          "text": "Resources",
+          "href": "#",
+          "children": [
+            {
+              "text": "Docs",
+              "href": "/docs"
+            },
+            {
+              "text": "API",
+              "href": "/api"
+            },
+            {
+              "text": "Status",
+              "href": "/status"
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Get Started",
+        "href": "/signup"
+      }
+    },
+    "footer": {
+      "logo": {
+        "text": "Portfolio"
+      },
+      "tagline": "Crafting digital experiences that inspire.",
+      "copyright": "© 2025 Modern Portfolio. All rights reserved.",
+      "sections": [
+        {
+          "title": "Product",
+          "links": [
+            {
+              "text": "Features",
+              "href": "#features"
+            },
+            {
+              "text": "Portfolio",
+              "href": "#portfolio"
+            },
+            {
+              "text": "Testimonials",
+              "href": "#testimonials"
+            }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            {
+              "text": "About",
+              "href": "/about"
+            },
+            {
+              "text": "Blog",
+              "href": "/blog"
+            },
+            {
+              "text": "Careers",
+              "href": "/#careers"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            {
+              "text": "Docs",
+              "href": "/docs"
+            },
+            {
+              "text": "API",
+              "href": "/api"
+            },
+            {
+              "text": "Status",
+              "href": "/status"
+            }
+          ]
+        },
+        {
+          "title": "Legal",
+          "links": [
+            {
+              "text": "Privacy",
+              "href": "/#privacy"
+            },
+            {
+              "text": "Terms",
+              "href": "/#terms"
+            }
+          ]
+        }
+      ],
+      "social": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/modernportfolio"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://linkedin.com/company/modernportfolio"
+        },
+        {
+          "platform": "github",
+          "url": "https://github.com/modernportfolio"
+        },
+        {
+          "platform": "dribbble",
+          "url": "https://dribbble.com/modernportfolio"
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "slug": "/",
+      "title": "Home",
+      "description": "Welcome to the Modern Portfolio homepage, showcasing premium features, stats, and testimonials.",
+      "sections": [
+        {
+          "type": "hero",
+          "id": "hero",
+          "props": {
+            "layout": "centered",
+            "title": "Build Your Stunning Portfolio",
+            "subtitle": "A modern, responsive portfolio template designed to impress clients and elevate your brand.",
+            "buttons": [
+              {
+                "text": "Get Started",
+                "href": "/signup",
+                "variant": "primary"
+              },
+              {
+                "text": "View Work",
+                "href": "#portfolio",
+                "variant": "secondary"
+              }
+            ],
+            "trustIndicators": [
+              "500K+ Users",
+              "4.9/5 Rating",
+              "Trusted by Top Brands"
+            ],
+            "background": {
+              "gradient": "from-blue-50 to-white"
+            },
+            "image": "https://images.unsplash.com/photo-1507238691740-6266b4d26ab0?q=80&w=1200&auto=format&fit=crop"
+          }
+        },
+        {
+          "type": "features",
+          "id": "features",
+          "props": {
+            "title": "Premium Features",
+            "subtitle": "Everything you need to create an impressive portfolio.",
+            "columns": 3,
+            "items": [
+              {
+                "id": "f1",
+                "title": "Responsive Design",
+                "description": "Looks stunning on all devices, from phones to desktop.",
+                "icon": {
+                  "value": "📱"
+                }
+              },
+              {
+                "id": "f2",
+                "title": "Fast & Optimized",
+                "description": "Built for speed with optimized assets and performance.",
+                "icon": {
+                  "value": "⚡"
+                }
+              },
+              {
+                "id": "f3",
+                "title": "Easy Customization",
+                "description": "Tailor every section to match your brand identity.",
+                "icon": {
+                  "value": "🎨"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "stats",
+          "id": "stats",
+          "props": {
+            "background": "bg-blue-900",
+            "items": [
+              {
+                "id": "s1",
+                "value": "500K+",
+                "label": "Happy Clients"
+              },
+              {
+                "id": "s2",
+                "value": "99.9%",
+                "label": "Uptime"
+              },
+              {
+                "id": "s3",
+                "value": "24/7",
+                "label": "Support"
+              }
+            ]
+          }
+        },
+        {
+          "type": "testimonials",
+          "id": "testimonials",
+          "props": {
+            "title": "What Clients Say",
+            "subtitle": "Real feedback from real clients who love our work.",
+            "trustBadge": "Trusted by thousands",
+            "items": [
+              {
+                "id": "t1",
+                "content": "The portfolio design exceeded our expectations. It's modern, clean, and perfectly represents our brand.",
+                "rating": 5,
+                "author": {
+                  "name": "Jane Doe",
+                  "role": "CEO, TechCorp"
+                }
+              },
+              {
+                "id": "t2",
+                "content": "Outstanding quality and attention to detail. Highly recommend!",
+                "rating": 5,
+                "author": {
+                  "name": "John Smith",
+                  "role": "Designer, Creative Studio"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "/blog",
+      "title": "Blog",
+      "description": "Explore the latest articles, guides, and industry insights.",
+      "hero": {
+        "title": "Blog",
+        "subtitle": "Latest articles"
+      },
+      "categories": [
+        "All",
+        "News",
+        "Guides",
+        "Design",
+        "Development"
+      ],
+      "posts": [
+        {
+          "id": 1,
+          "title": "Top Design Trends for 2025",
+          "excerpt": "Discover the design trends that will dominate 2025 and how to implement them in your projects.",
+          "category": "Design",
+          "date": "15 Nov 2024",
+          "image": "https://images.unsplash.com/photo-1547658719-da2b94858c38?q=80&w=1200&auto=format&fit=crop",
+          "readTime": "7 min"
+        },
+        {
+          "id": 2,
+          "title": "Building Scalable Web Applications",
+          "excerpt": "Learn best practices for developing scalable and maintainable web applications.",
+          "category": "Development",
+          "date": "10 Nov 2024",
+          "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
+          "readTime": "10 min"
+        }
+      ],
+      "newsletter": {
+        "title": "Subscribe",
+        "description": "Get updates on the latest articles and exclusive content.",
+        "placeholder": "Email",
+        "buttonText": "Subscribe"
+      }
+    },
+    {
+      "slug": "/about",
+      "title": "About",
+      "description": "Learn more about our mission, vision, values, and team.",
+      "hero": {
+        "title": "About Us",
+        "subtitle": "Our story"
+      },
+      "stats": [
+        {
+          "value": "5+",
+          "label": "Years"
+        },
+        {
+          "value": "100+",
+          "label": "Projects"
+        },
+        {
+          "value": "95%",
+          "label": "Client Satisfaction"
+        }
+      ],
+      "mission": {
+        "title": "Mission",
+        "description": "To empower creators and businesses with stunning, functional digital experiences.",
+        "icon": "vision",
+        "gradient": "from-blue-600 to-blue-700"
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "To be the leading choice for modern, high-impact portfolio solutions worldwide.",
+        "icon": "mission",
+        "gradient": "from-green-600 to-green-700"
+      },
+      "values": {
+        "title": "Values",
+        "subtitle": "What we believe",
+        "items": [
+          {
+            "title": "Excellence",
+            "description": "We strive for excellence in every detail of our work.",
+            "icon": "check"
+          },
+          {
+            "title": "Innovation",
+            "description": "We embrace innovation to deliver cutting-edge solutions.",
+            "icon": "check"
+          },
+          {
+            "title": "Integrity",
+            "description": "We operate with integrity and transparency in all our interactions.",
+            "icon": "check"
+          }
+        ]
+      },
+      "team": {
+        "title": "Team",
+        "subtitle": "Meet the team",
+        "members": [
+          {
+            "name": "Alex Johnson",
+            "role": "Lead Designer",
+            "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=600&auto=format&fit=crop"
+          },
+          {
+            "name": "Samantha Lee",
+            "role": "Frontend Developer",
+            "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600&auto=format&fit=crop"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "/docs",
+      "title": "Docs",
+      "description": "Comprehensive documentation and guides.",
+      "hero": {
+        "title": "Documentation",
+        "subtitle": "Explore our guides and tutorials."
+      },
+      "guides": [
+        {
+          "id": 1,
+          "title": "Getting Started",
+          "description": "Quick start guide to set up your portfolio.",
+          "href": "/docs/getting-started"
+        },
+        {
+          "id": 2,
+          "title": "Customization",
+          "description": "Learn how to customize themes and layouts.",
+          "href": "/docs/customization"
+        }
+      ]
+    },
+    {
+      "slug": "/status",
+      "title": "Status",
+      "description": "System status and tracking.",
+      "hero": {
+        "title": "Status",
+        "subtitle": "Check system health and updates."
+      },
+      "statuses": [
+        {
+          "id": 1,
+          "name": "Website",
+          "status": "operational"
+        },
+        {
+          "id": 2,
+          "name": "API",
+          "status": "degraded"
+        }
+      ]
+    },
+    {
+      "slug": "/api",
+      "title": "API",
+      "description": "API and calculator tools.",
+      "hero": {
+        "title": "API",
+        "subtitle": "Access our tools and calculators."
+      },
+      "comingSoon": true
+    }
+  ]
+}
