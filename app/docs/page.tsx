@@ -86,15 +86,15 @@ export default async function DocsPage() {
   const { hero, guides } = data;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               {hero?.title || 'Documentation'}
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{hero?.subtitle || ''}</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{hero?.subtitle || ''}</p>
           </div>
         </div>
       </section>
@@ -106,18 +106,18 @@ export default async function DocsPage() {
             {guides?.map((guide: any, index: number) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 text-green-600">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4 text-green-600 dark:text-green-400">
                   {iconMap[guide.icon] || iconMap.book}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{guide.title}</h3>
-                <p className="text-gray-600 mb-4">{guide.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{guide.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{guide.description}</p>
                 {guide.topics && (
-                  <ul className="space-y-2 text-gray-600">
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                     {guide.topics.map((topic: string, idx: number) => (
                       <li key={idx} className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
+                        <span className="text-green-600 dark:text-green-400 mr-2">✓</span>
                         {topic}
                       </li>
                     ))}
