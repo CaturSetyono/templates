@@ -1,0 +1,384 @@
+site:
+  name: 'HomeFinder'
+  description: 'Find your dream home today'
+  theme:
+    primary: '#0891b2' # Cyan 600
+    secondary: '#db2777' # Pink 600
+    accent: '#1e293b' # Slate 800
+  navigation:
+    logo:
+      text: 'HomeFinder'
+    links:
+      - text: 'Properties'
+        href: '#features'
+      - text: 'Market Stats'
+        href: '#stats'
+      - text: 'Resources'
+        href: '#'
+        children:
+          - text: 'Buyer Guide'
+            href: '/docs'
+          - text: 'Market News'
+            href: '/blog'
+      - text: 'About'
+        href: '/about'
+    cta:
+      text: 'List Property'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'HomeFinder'
+    tagline: 'Connecting buyers and sellers with the perfect properties through innovative technology and expert real estate services.'
+    copyright: ' 2025 HomeFinder Realty. All rights reserved.'
+    sections:
+      - title: 'Browse'
+        links:
+          - text: 'All Properties'
+            href: '#features'
+          - text: 'Featured Listings'
+            href: '#stats'
+          - text: 'New Listings'
+            href: '/security'
+      - title: 'Company'
+        links:
+          - text: 'About Us'
+            href: '/about'
+          - text: 'Our Agents'
+            href: '/careers'
+          - text: 'Contact'
+            href: '/contact'
+      - title: 'Resources'
+        links:
+          - text: 'Buying Guide'
+            href: '/docs'
+          - text: 'Mortgage Calculator'
+            href: '/api'
+          - text: 'Application Status'
+            href: '/status'
+    social:
+      - platform: 'youtube'
+        url: 'https://youtube.com/homefinder'
+      - platform: 'linkedin'
+        url: 'https://linkedin.com/company/homefinder'
+      - platform: 'twitter'
+        url: 'https://twitter.com/homefinder'
+
+pages:
+  - slug: '/'
+    title: 'Home'
+    description: 'HomeFinder - Your Dream Home Awaits'
+    sections:
+      - type: 'hero'
+        id: 'hero'
+        props:
+          layout: 'centered'
+          title: 'Find Your Perfect Home'
+          subtitle: 'Browse 50,000+ properties across the country. From cozy apartments to luxury estates, discover your dream home with expert guidance and seamless transactions.'
+          buttons:
+            - text: 'Search Properties'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'Browse Listings'
+              href: '#features'
+              variant: 'outline'
+          trustIndicators:
+            - '50K+ Properties'
+            - '5,000+ Agents'
+            - 'Trusted Since 2012'
+          background:
+            gradient: 'from-cyan-50 via-white to-pink-50'
+          image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1000'
+
+      - type: 'features'
+        id: 'features'
+        props:
+          title: 'Property Types'
+          subtitle: 'Find the perfect property that matches your lifestyle.'
+          columns: 3
+          items:
+            - id: 'f1'
+              title: 'Apartments'
+              description: 'Modern apartments in prime locations with great amenities.'
+              icon:
+                value: '🏢'
+            - id: 'f2'
+              title: 'Single Family Homes'
+              description: 'Spacious houses perfect for families in quiet neighborhoods.'
+              icon:
+                value: '🏡'
+            - id: 'f3'
+              title: 'Luxury Estates'
+              description: 'Premium properties with exclusive features and locations.'
+              icon:
+                value: '🏰'
+            - id: 'f4'
+              title: 'Condos'
+              description: 'Low-maintenance living with community amenities and security.'
+              icon:
+                value: '🏘️'
+            - id: 'f5'
+              title: 'Commercial'
+              description: 'Office spaces, retail locations, and investment properties.'
+              icon:
+                value: '🏬'
+            - id: 'f6'
+              title: 'Land & Lots'
+              description: 'Build your dream home on prime residential or commercial land.'
+              icon:
+                value: '🌳'
+
+      - type: 'stats'
+        id: 'stats'
+        props:
+          background: 'bg-cyan-900'
+          items:
+            - id: 's1'
+              value: '50K+'
+              label: 'Active Listings'
+            - id: 's2'
+              value: '5000+'
+              label: 'Expert Agents'
+            - id: 's3'
+              value: '96%'
+              label: 'Client Satisfaction'
+            - id: 's4'
+              value: '4.8/5'
+              label: 'Service Rating'
+
+      - type: 'testimonials'
+        id: 'testimonials'
+        props:
+          title: 'Happy Homeowners'
+          subtitle: 'Real stories from satisfied clients.'
+          trustBadge: 'Join thousands of happy homeowners who found their dream property'
+          items:
+            - id: 't1'
+              content: 'Found our dream home in just 2 weeks! The agent was professional, responsive, and made the entire process smooth and stress-free.'
+              rating: 5
+              author:
+                name: 'Jennifer Taylor'
+                role: 'First-Time Buyer'
+            - id: 't2'
+              content: 'Sold our house above asking price in 5 days! The marketing strategy and professional photos made all the difference.'
+              rating: 5
+              author:
+                name: 'Michael Brown'
+                role: 'Home Seller'
+            - id: 't3'
+              content: 'Excellent service from start to finish. The team helped us navigate the complex buying process with ease. Highly recommend!'
+              rating: 5
+              author:
+                name: 'Sarah Williams'
+                role: 'Property Investor'
+
+  - slug: '/blog'
+    title: 'Blog'
+    description: 'Real estate news, tips, and market insights'
+    hero:
+      title: 'HomeFinder Blog'
+      subtitle: 'Expert real estate advice, market trends, and home buying tips'
+    categories:
+      - 'All'
+      - 'Buying Tips'
+      - 'Selling Tips'
+      - 'Market Trends'
+      - 'Investment'
+      - 'Home Improvement'
+    posts:
+      - id: 1
+        title: 'First-Time Home Buyer Guide for 2024'
+        excerpt: 'Everything you need to know about buying your first home, from financing to closing.'
+        category: 'Buying Tips'
+        date: '15 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'
+        readTime: '10 min'
+      - id: 2
+        title: '10 Ways to Increase Your Homes Value'
+        excerpt: 'Simple and cost-effective improvements that can significantly boost your property value.'
+        category: 'Home Improvement'
+        date: '10 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800'
+        readTime: '7 min'
+      - id: 3
+        title: 'Real Estate Market Forecast 2024'
+        excerpt: 'Expert analysis of market trends, interest rates, and what to expect in the coming year.'
+        category: 'Market Trends'
+        date: '5 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?auto=format&fit=crop&q=80&w=800'
+        readTime: '8 min'
+      - id: 4
+        title: 'How to Sell Your Home Fast'
+        excerpt: 'Proven strategies to attract buyers and close deals quickly in any market.'
+        category: 'Selling Tips'
+        date: '1 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+      - id: 5
+        title: 'Real Estate Investment Strategies'
+        excerpt: 'Build wealth through smart property investments with these expert tips.'
+        category: 'Investment'
+        date: '28 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800'
+        readTime: '9 min'
+      - id: 6
+        title: 'Understanding Mortgage Pre-Approval'
+        excerpt: 'Why pre-approval matters and how to get approved for the best rates.'
+        category: 'Buying Tips'
+        date: '20 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800'
+        readTime: '5 min'
+    newsletter:
+      title: 'Get Market Updates'
+      description: 'Subscribe for new listings, market insights, and exclusive opportunities'
+      placeholder: 'Your Email'
+      buttonText: 'Subscribe'
+
+  - slug: '/about'
+    title: 'About Us'
+    description: 'Learn more about our mission and team'
+    hero:
+      title: 'About HomeFinder'
+      subtitle: 'Since 2012, HomeFinder has been helping families find their perfect homes, connecting buyers and sellers with integrity, expertise, and innovative technology.'
+    stats:
+      - value: '12+'
+        label: 'Years Experience'
+      - value: '25K+'
+        label: 'Homes Sold'
+      - value: '5000+'
+        label: 'Expert Agents'
+      - value: '4.8/5'
+        label: 'Client Rating'
+    mission:
+      title: 'Our Mission'
+      description: 'To simplify the real estate process and help every client find their perfect property through expert guidance, cutting-edge technology, and personalized service.'
+      icon: 'vision'
+      gradient: 'from-cyan-600 to-cyan-700'
+    vision:
+      title: 'Our Vision'
+      description: 'To revolutionize real estate by creating the most transparent, efficient, and customer-centric property marketplace in the industry.'
+      icon: 'mission'
+      gradient: 'from-pink-600 to-pink-700'
+    values:
+      title: 'Our Values'
+      subtitle: 'Core principles that define our service'
+      items:
+        - title: 'Integrity First'
+          description: 'Honest, transparent dealings in every transaction.'
+          icon: 'check'
+        - title: 'Expert Guidance'
+          description: 'Professional advice from experienced real estate specialists.'
+          icon: 'lightning'
+        - title: 'Client Success'
+          description: 'Your goals and satisfaction are our top priority.'
+          icon: 'users'
+        - title: 'Innovation'
+          description: 'Leveraging technology to streamline the buying and selling process.'
+          icon: 'globe'
+    team:
+      title: 'Leadership Team'
+      subtitle: 'Real estate veterans committed to your success'
+      members:
+        - name: 'Robert Anderson'
+          role: 'CEO & Founder'
+          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Catherine Lee'
+          role: 'Chief Operating Officer'
+          image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400'
+        - name: 'Marcus Johnson'
+          role: 'Head of Sales'
+          image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Diana Chen'
+          role: 'Director of Marketing'
+          image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400'
+
+  - slug: '/docs'
+    title: 'Documentation'
+    description: 'Real estate guides and resources'
+    hero:
+      title: 'Real Estate Guides & Resources'
+      subtitle: 'Comprehensive information for buyers, sellers, and investors'
+    guides:
+      - title: 'Buying a Home'
+        description: 'Complete guide to the home buying process from search to closing.'
+        icon: 'code'
+        topics:
+          - 'Getting Pre-Approved'
+          - 'House Hunting Tips'
+          - 'Making an Offer'
+      - title: 'Selling Your Home'
+        description: 'Maximize your homes value and sell faster with expert strategies.'
+        icon: 'chart'
+        topics:
+          - 'Pricing Strategy'
+          - 'Home Staging'
+          - 'Negotiation Tips'
+      - title: 'Financing Options'
+        description: 'Understanding mortgages, loans, and financing alternatives.'
+        icon: 'palette'
+        topics:
+          - 'Mortgage Types'
+          - 'Down Payments'
+          - 'Interest Rates'
+      - title: 'Legal & Paperwork'
+        description: 'Navigate contracts, disclosures, and legal requirements.'
+        icon: 'briefcase'
+        topics:
+          - 'Purchase Agreements'
+          - 'Title & Escrow'
+          - 'Closing Process'
+      - title: 'Investment Properties'
+        description: 'Build wealth through strategic real estate investments.'
+        icon: 'rocket'
+        topics:
+          - 'ROI Calculation'
+          - 'Rental Properties'
+          - 'Fix & Flip'
+      - title: 'Market Analysis'
+        description: 'Understanding local markets and property valuations.'
+        icon: 'book'
+        topics:
+          - 'Comparative Analysis'
+          - 'Market Trends'
+          - 'Neighborhood Research'
+
+  - slug: '/status'
+    title: 'Application Status'
+    description: 'Track your real estate application'
+    hero:
+      title: 'Application Status'
+      subtitle: 'Monitor your mortgage application and transaction progress'
+    searchPlaceholder: 'Enter your Application ID or Email'
+    searchButton: 'Track'
+    recentTitle: 'Recent Applications'
+    statuses:
+      - orderId: 'HF-2024-001'
+        customer: 'Amanda White'
+        location: 'Austin, TX'
+        status: 'Under Review'
+        estimatedArrival: 'Decision by Dec 18'
+        progress: 70
+      - orderId: 'HF-2024-002'
+        customer: 'Brian Foster'
+        location: 'Seattle, WA'
+        status: 'Pending'
+        estimatedArrival: 'Submitted Dec 5'
+        progress: 35
+      - orderId: 'HF-2024-003'
+        customer: 'Carol Martinez'
+        location: 'Miami, FL'
+        status: 'Approved'
+        estimatedArrival: 'Approved'
+        progress: 100
+
+  - slug: '/api'
+    title: 'Mortgage Calculator'
+    description: 'Calculate your monthly payments'
+    hero:
+      title: 'Mortgage Payment Calculator'
+      subtitle: 'Estimate your monthly mortgage payments and affordability'
+    comingSoon:
+      title: 'Feature Coming Soon'
+      description: 'Our advanced mortgage calculator is under development. Soon you can calculate payments, compare loan options, and determine your buying power.'
+      icon: 'calculator'
+      buttonText: 'Contact Loan Officer'
+      buttonHref: '/signup'
