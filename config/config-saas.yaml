@@ -1,0 +1,384 @@
+site:
+  name: 'CloudFlow'
+  description: 'Streamline your workflow with powerful SaaS tools'
+  theme:
+    primary: '#6366f1' # Indigo 500
+    secondary: '#14b8a6' # Teal 500
+    accent: '#1e293b' # Slate 800
+  navigation:
+    logo:
+      text: 'CloudFlow'
+    links:
+      - text: 'Features'
+        href: '#features'
+      - text: 'Pricing'
+        href: '#stats'
+      - text: 'Resources'
+        href: '#'
+        children:
+          - text: 'Documentation'
+            href: '/docs'
+          - text: 'Blog'
+            href: '/blog'
+      - text: 'About'
+        href: '/about'
+    cta:
+      text: 'Start Free Trial'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'CloudFlow'
+    tagline: 'Empowering teams worldwide with intelligent automation, seamless collaboration, and powerful analytics.'
+    copyright: ' 2025 CloudFlow Technologies. All rights reserved.'
+    sections:
+      - title: 'Product'
+        links:
+          - text: 'All Features'
+            href: '#features'
+          - text: 'Pricing Plans'
+            href: '#stats'
+          - text: 'Security'
+            href: '/security'
+      - title: 'Company'
+        links:
+          - text: 'About Us'
+            href: '/about'
+          - text: 'Careers'
+            href: '/careers'
+          - text: 'Contact'
+            href: '/contact'
+      - title: 'Resources'
+        links:
+          - text: 'Documentation'
+            href: '/docs'
+          - text: 'API Reference'
+            href: '/api'
+          - text: 'System Status'
+            href: '/status'
+    social:
+      - platform: 'youtube'
+        url: 'https://youtube.com/cloudflow'
+      - platform: 'linkedin'
+        url: 'https://linkedin.com/company/cloudflow'
+      - platform: 'twitter'
+        url: 'https://twitter.com/cloudflow'
+
+pages:
+  - slug: '/'
+    title: 'Home'
+    description: 'CloudFlow - Workflow Automation Made Simple'
+    sections:
+      - type: 'hero'
+        id: 'hero'
+        props:
+          layout: 'centered'
+          title: 'Automate Your Workflow, Amplify Your Results'
+          subtitle: 'Join 50,000+ teams using CloudFlow to automate repetitive tasks, collaborate seamlessly, and make data-driven decisions. Start your 14-day free trial today.'
+          buttons:
+            - text: 'Start Free Trial'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'Watch Demo'
+              href: '#features'
+              variant: 'outline'
+          trustIndicators:
+            - '50K+ Teams'
+            - '99.9% Uptime'
+            - 'SOC 2 Certified'
+          background:
+            gradient: 'from-indigo-50 via-white to-teal-50'
+          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000'
+
+      - type: 'features'
+        id: 'features'
+        props:
+          title: 'Powerful Features for Modern Teams'
+          subtitle: 'Everything you need to streamline operations and boost productivity.'
+          columns: 3
+          items:
+            - id: 'f1'
+              title: 'Workflow Automation'
+              description: 'Automate repetitive tasks with visual workflow builder and smart triggers.'
+              icon:
+                value: '⚡'
+            - id: 'f2'
+              title: 'Team Collaboration'
+              description: 'Real-time collaboration with chat, video calls, and shared workspaces.'
+              icon:
+                value: '👥'
+            - id: 'f3'
+              title: 'Analytics Dashboard'
+              description: 'Comprehensive insights with customizable reports and visualizations.'
+              icon:
+                value: '📊'
+            - id: 'f4'
+              title: 'API Integration'
+              description: 'Connect with 1000+ apps and services through our robust API.'
+              icon:
+                value: '🔌'
+            - id: 'f5'
+              title: 'Security & Compliance'
+              description: 'Enterprise-grade security with SOC 2, GDPR, and HIPAA compliance.'
+              icon:
+                value: '🔒'
+            - id: 'f6'
+              title: 'Mobile Apps'
+              description: 'Stay productive on-the-go with native iOS and Android apps.'
+              icon:
+                value: '📱'
+
+      - type: 'stats'
+        id: 'stats'
+        props:
+          background: 'bg-indigo-900'
+          items:
+            - id: 's1'
+              value: '50K+'
+              label: 'Active Teams'
+            - id: 's2'
+              value: '99.9%'
+              label: 'Uptime SLA'
+            - id: 's3'
+              value: '10M+'
+              label: 'Tasks Automated'
+            - id: 's4'
+              value: '4.9/5'
+              label: 'User Rating'
+
+      - type: 'testimonials'
+        id: 'testimonials'
+        props:
+          title: 'Trusted by Leading Teams'
+          subtitle: 'See how companies are transforming their workflows.'
+          trustBadge: 'Join 50,000 teams automating their success with CloudFlow'
+          items:
+            - id: 't1'
+              content: 'CloudFlow reduced our manual work by 70%! The automation features are incredibly powerful yet easy to use. Game-changer for our team.'
+              rating: 5
+              author:
+                name: 'Jessica Parker'
+                role: 'Operations Manager, TechCorp'
+            - id: 't2'
+              content: 'Best collaboration tool weve used. The integrations are seamless and the analytics help us make better decisions. Highly recommend!'
+              rating: 5
+              author:
+                name: 'Ryan Mitchell'
+                role: 'CTO, StartupXYZ'
+            - id: 't3'
+              content: 'Incredible ROI! We saved 20 hours per week on repetitive tasks. The customer support is also top-notch. Worth every penny.'
+              rating: 5
+              author:
+                name: 'Olivia Chen'
+                role: 'Product Lead, InnovateLab'
+
+  - slug: '/blog'
+    title: 'Blog'
+    description: 'Product updates, tips, and industry insights'
+    hero:
+      title: 'CloudFlow Blog'
+      subtitle: 'Product updates, workflow tips, and insights on productivity and automation'
+    categories:
+      - 'All'
+      - 'Product Updates'
+      - 'Productivity'
+      - 'Automation'
+      - 'Case Studies'
+      - 'Tutorials'
+    posts:
+      - id: 1
+        title: 'Introducing CloudFlow 3.0: AI-Powered Automation'
+        excerpt: 'Discover the new AI features that make workflow automation smarter and more intuitive than ever.'
+        category: 'Product Updates'
+        date: '15 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800'
+        readTime: '5 min'
+      - id: 2
+        title: '10 Productivity Hacks for Remote Teams'
+        excerpt: 'Proven strategies to keep your distributed team aligned, engaged, and productive.'
+        category: 'Productivity'
+        date: '10 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'
+        readTime: '7 min'
+      - id: 3
+        title: 'How to Build Your First Workflow in 5 Minutes'
+        excerpt: 'Step-by-step tutorial for creating powerful automations without any coding.'
+        category: 'Tutorials'
+        date: '5 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+      - id: 4
+        title: 'Case Study: How Acme Corp Saved 100 Hours/Week'
+        excerpt: 'Learn how one company transformed their operations with CloudFlow automation.'
+        category: 'Case Studies'
+        date: '1 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800'
+        readTime: '8 min'
+      - id: 5
+        title: 'The Future of Work: Automation Trends 2024'
+        excerpt: 'Explore emerging trends in workflow automation and what they mean for businesses.'
+        category: 'Automation'
+        date: '28 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'
+        readTime: '9 min'
+      - id: 6
+        title: 'Security Best Practices for SaaS Applications'
+        excerpt: 'Essential security measures every team should implement when using cloud software.'
+        category: 'Tutorials'
+        date: '20 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+    newsletter:
+      title: 'Get Product Updates'
+      description: 'Subscribe for new features, tips, and exclusive insights'
+      placeholder: 'Your Email'
+      buttonText: 'Subscribe'
+
+  - slug: '/about'
+    title: 'About Us'
+    description: 'Learn more about our mission and team'
+    hero:
+      title: 'About CloudFlow'
+      subtitle: 'Since 2017, CloudFlow has been on a mission to help teams work smarter through intelligent automation and seamless collaboration tools trusted by 50,000+ organizations.'
+    stats:
+      - value: '7+'
+        label: 'Years Innovation'
+      - value: '50K+'
+        label: 'Active Teams'
+      - value: '10M+'
+        label: 'Tasks Automated'
+      - value: '4.9/5'
+        label: 'User Rating'
+    mission:
+      title: 'Our Mission'
+      description: 'To democratize automation and empower every team to work more efficiently by eliminating repetitive tasks and enabling focus on what truly matters.'
+      icon: 'vision'
+      gradient: 'from-indigo-600 to-indigo-700'
+    vision:
+      title: 'Our Vision'
+      description: 'To become the worlds most intuitive workflow automation platform, making advanced productivity tools accessible to teams of all sizes and industries.'
+      icon: 'mission'
+      gradient: 'from-teal-600 to-teal-700'
+    values:
+      title: 'Our Values'
+      subtitle: 'Principles that drive our product and culture'
+      items:
+        - title: 'User-Centric Design'
+          description: 'Building intuitive tools that anyone can use without extensive training.'
+          icon: 'check'
+        - title: 'Innovation First'
+          description: 'Constantly pushing boundaries with cutting-edge technology and features.'
+          icon: 'lightning'
+        - title: 'Reliability'
+          description: 'Maintaining 99.9% uptime and enterprise-grade security always.'
+          icon: 'users'
+        - title: 'Transparency'
+          description: 'Open communication about features, pricing, and company direction.'
+          icon: 'globe'
+    team:
+      title: 'Leadership Team'
+      subtitle: 'Experienced technologists and entrepreneurs'
+      members:
+        - name: 'Alex Thompson'
+          role: 'CEO & Co-Founder'
+          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Samantha Lee'
+          role: 'CTO & Co-Founder'
+          image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400'
+        - name: 'Jordan Williams'
+          role: 'VP of Engineering'
+          image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Maya Patel'
+          role: 'Head of Product'
+          image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400'
+
+  - slug: '/docs'
+    title: 'Documentation'
+    description: 'Comprehensive guides and API reference'
+    hero:
+      title: 'Documentation & Guides'
+      subtitle: 'Everything you need to get started and master CloudFlow'
+    guides:
+      - title: 'Getting Started'
+        description: 'Quick start guide to set up your account and create your first workflow.'
+        icon: 'code'
+        topics:
+          - 'Account Setup'
+          - 'First Workflow'
+          - 'Team Invitations'
+      - title: 'Workflow Builder'
+        description: 'Master the visual workflow builder and automation triggers.'
+        icon: 'chart'
+        topics:
+          - 'Drag & Drop Interface'
+          - 'Triggers & Actions'
+          - 'Conditional Logic'
+      - title: 'Integrations'
+        description: 'Connect CloudFlow with your favorite apps and services.'
+        icon: 'palette'
+        topics:
+          - 'Popular Integrations'
+          - 'Custom Webhooks'
+          - 'API Connections'
+      - title: 'API Reference'
+        description: 'Complete API documentation for developers.'
+        icon: 'briefcase'
+        topics:
+          - 'Authentication'
+          - 'Endpoints'
+          - 'Rate Limits'
+      - title: 'Security & Compliance'
+        description: 'Learn about our security measures and compliance certifications.'
+        icon: 'rocket'
+        topics:
+          - 'Data Encryption'
+          - 'SOC 2 Compliance'
+          - 'GDPR & Privacy'
+      - title: 'Best Practices'
+        description: 'Tips and strategies for optimizing your workflows.'
+        icon: 'book'
+        topics:
+          - 'Workflow Optimization'
+          - 'Error Handling'
+          - 'Performance Tips'
+
+  - slug: '/status'
+    title: 'System Status'
+    description: 'Real-time system status and uptime'
+    hero:
+      title: 'System Status'
+      subtitle: 'Monitor CloudFlow service health and performance in real-time'
+    searchPlaceholder: 'Enter Incident ID or Service Name'
+    searchButton: 'Search'
+    recentTitle: 'Recent Incidents'
+    statuses:
+      - orderId: 'INC-2024-001'
+        customer: 'API Service'
+        location: 'US-East Region'
+        status: 'Operational'
+        estimatedArrival: 'All Systems Normal'
+        progress: 100
+      - orderId: 'INC-2024-002'
+        customer: 'Workflow Engine'
+        location: 'EU Region'
+        status: 'Operational'
+        estimatedArrival: 'All Systems Normal'
+        progress: 100
+      - orderId: 'INC-2024-003'
+        customer: 'Database Cluster'
+        location: 'APAC Region'
+        status: 'Operational'
+        estimatedArrival: 'All Systems Normal'
+        progress: 100
+
+  - slug: '/api'
+    title: 'ROI Calculator'
+    description: 'Calculate your automation ROI'
+    hero:
+      title: 'Automation ROI Calculator'
+      subtitle: 'Estimate time and cost savings from automating your workflows'
+    comingSoon:
+      title: 'Feature Coming Soon'
+      description: 'Our ROI calculator is under development. Soon you can calculate exact time savings, cost reductions, and productivity gains from workflow automation.'
+      icon: 'calculator'
+      buttonText: 'Contact Sales'
+      buttonHref: '/signup'
