@@ -10,7 +10,7 @@ async function getBlogData() {
 
 export default async function BlogPage() {
   const data = await getBlogData();
-  
+
   if (!data) {
     return <div className="min-h-screen flex items-center justify-center">Failed to load blog data</div>;
   }
@@ -18,13 +18,13 @@ export default async function BlogPage() {
   const { hero, categories, posts, newsletter } = data;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">{hero?.title || 'Blog'}</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">{hero?.title || 'Blog'}</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {hero?.subtitle || ''}
             </p>
           </div>
@@ -34,11 +34,10 @@ export default async function BlogPage() {
             {categories?.map((category: string) => (
               <button
                 key={category}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  category === 'All'
-                    ? 'bg-green-600 text-white shadow-lg shadow-green-600/25'
-                    : 'bg-white text-gray-600 hover:bg-green-50 hover:text-green-600'
-                }`}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${category === 'All'
+                    ? 'bg-green-600 dark:bg-green-500 text-white shadow-lg shadow-green-600/25'
+                    : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900 hover:text-green-600 dark:hover:text-green-400'
+                  }`}
               >
                 {category}
               </button>
@@ -54,7 +53,7 @@ export default async function BlogPage() {
             {posts?.map((post: any) => (
               <article
                 key={post.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -63,13 +62,13 @@ export default async function BlogPage() {
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-green-600 dark:bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {post.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
                     <span className="flex items-center gap-1">
                       <svg
                         className="w-4 h-4"
@@ -103,13 +102,13 @@ export default async function BlogPage() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.id}` as any}
-                    className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors"
+                    className="inline-flex items-center text-green-600 dark:text-green-400 font-semibold hover:text-green-700 dark:hover:text-green-300 transition-colors"
                   >
                     Baca Selengkapnya
                     <svg
@@ -133,7 +132,7 @@ export default async function BlogPage() {
 
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <button className="px-8 py-4 bg-white text-green-600 border-2 border-green-600 rounded-full font-bold hover:bg-green-600 hover:text-white transition-all shadow-lg">
+            <button className="px-8 py-4 bg-white dark:bg-gray-700 text-green-600 dark:text-green-400 border-2 border-green-600 dark:border-green-500 rounded-full font-bold hover:bg-green-600 hover:text-white dark:hover:bg-green-500 transition-all shadow-lg">
               Muat Artikel Lainnya
             </button>
           </div>
