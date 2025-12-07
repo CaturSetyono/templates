@@ -92,13 +92,13 @@ export default async function AboutPage() {
   const { hero, stats, mission, vision, values, team } = data;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-green-50 to-white">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-green-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">{hero?.title || 'About Us'}</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">{hero?.title || 'About Us'}</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
               {hero?.subtitle || ''}
             </p>
           </div>
@@ -107,8 +107,8 @@ export default async function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
             {stats?.map((stat: any, index: number) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">{stat.value}</div>
+                <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -145,26 +145,26 @@ export default async function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               {values?.title || 'Our Values'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{values?.subtitle || ''}</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{values?.subtitle || ''}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values?.items?.map((value: any, index: number) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-6">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center text-green-600 dark:text-green-400 mb-6">
                   {iconMap[value.icon] || iconMap.check}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -172,11 +172,11 @@ export default async function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">{team?.title || 'Our Team'}</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{team?.subtitle || ''}</p>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">{team?.title || 'Our Team'}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{team?.subtitle || ''}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -190,8 +190,8 @@ export default async function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-green-600 font-medium">{member.role}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{member.name}</h3>
+                <p className="text-green-600 dark:text-green-400 font-medium">{member.role}</p>
               </div>
             ))}
           </div>
