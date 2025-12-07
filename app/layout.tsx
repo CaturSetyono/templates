@@ -4,10 +4,8 @@ import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { ThemeProvider } from '@/components/theme-provider';
-import fs from 'fs';
-import path from 'path';
-import yaml from 'js-yaml';
 import type { SiteConfig } from '@/types';
+import { loadSiteConfig } from '@/lib/config-loader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,26 +14,12 @@ export const metadata: Metadata = {
   description: 'Server-Driven UI website builder with Next.js 14',
 };
 
-// Load site configuration
-async function loadSiteConfig(): Promise<SiteConfig | null> {
-  try {
-    const configPath = path.join(process.cwd(), 'config', 'config.yaml');
-    const fileContents = fs.readFileSync(configPath, 'utf8');
-    const config = yaml.load(fileContents) as any;
-    console.log('Site Config Loaded:', JSON.stringify(config.site, null, 2));
-    return config.site || null;
-  } catch (error) {
-    console.error('Failed to load site config:', error);
-    return null;
-  }
-}
-
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const siteConfig = await loadSiteConfig();
+  const siteConfig = loadSiteConfig();
   const theme = siteConfig?.theme;
 
   const themeStyles = theme
