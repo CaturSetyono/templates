@@ -1,0 +1,323 @@
+site:
+  name: 'LaunchPad SaaS'
+  description: 'A comprehensive SaaS solution for startups and enterprises to accelerate growth and streamline operations.'
+  theme:
+    primary: '#2563eb'
+    secondary: '#0ea5e9'
+    accent: '#22c55e'
+  navigation:
+    logo:
+      text: 'LaunchPad'
+    links:
+      - text: 'Features'
+        href: '#features'
+      - text: 'Pricing'
+        href: '#pricing'
+      - text: 'About'
+        href: '#about'
+      - text: 'Contact'
+        href: '#contact'
+    cta:
+      text: 'Get Started'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'LaunchPad'
+    tagline: 'Empowering businesses with scalable SaaS solutions'
+    copyright: '© 2024 LaunchPad SaaS. All rights reserved.'
+    sections:
+      - title: 'Product'
+        links:
+          - text: 'Features'
+            href: '#features'
+          - text: 'Pricing'
+            href: '#pricing'
+          - text: 'Roadmap'
+            href: '#roadmap'
+      - title: 'Company'
+        links:
+          - text: 'About'
+            href: '#about'
+          - text: 'Careers'
+            href: '/careers'
+          - text: 'Contact'
+            href: '#contact'
+      - title: 'Support'
+        links:
+          - text: 'Help Center'
+            href: '/help'
+          - text: 'Documentation'
+            href: '/docs'
+          - text: 'Status'
+            href: '/status'
+    social:
+      - platform: 'twitter'
+        url: 'https://twitter.com/launchpad'
+      - platform: 'linkedin'
+        url: 'https://linkedin.com/company/launchpad'
+      - platform: 'github'
+        url: 'https://github.com/launchpad'
+
+pages:
+  - slug: '/'
+    title: 'Home'
+    description: 'LaunchPad SaaS - Launch Your SaaS in Days, Not Months'
+    sections:
+      - type: 'hero'
+        id: 'hero'
+        props:
+          layout: 'centered'
+          title: 'Launch Your SaaS in Days, Not Months'
+          subtitle: 'Pre-built components, authentication, billing, and analytics—all integrated and ready to deploy.'
+          buttons:
+            - text: 'Start Free Trial'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'View Demo'
+              href: '/demo'
+              variant: 'outline'
+          background:
+            gradient: 'from-blue-50 via-white to-cyan-50'
+          image: 'https://images.unsplash.com/photo-1555421689-491a9763b6d8?q=80&w=2070&auto=format&fit=crop'
+
+      - type: 'logo-cloud'
+        id: 'logo-cloud'
+        props:
+          title: 'Trusted by innovative companies'
+          logos:
+            - 'https://via.placeholder.com/120x40?text=Company+1'
+            - 'https://via.placeholder.com/120x40?text=Company+2'
+            - 'https://via.placeholder.com/120x40?text=Company+3'
+            - 'https://via.placeholder.com/120x40?text=Company+4'
+            - 'https://via.placeholder.com/120x40?text=Company+5'
+
+      - type: 'features'
+        id: 'features'
+        props:
+          title: 'Everything You Need to Launch'
+          subtitle: 'Comprehensive tools to build and scale your SaaS'
+          columns: 3
+          items:
+            - id: 'f1'
+              title: 'Secure Authentication'
+              description: 'OAuth, SSO, and role-based access control built-in.'
+              icon:
+                value: '🛡️'
+            - id: 'f2'
+              title: 'Integrated Billing'
+              description: 'Stripe integration with subscription management and invoicing.'
+              icon:
+                value: '💳'
+            - id: 'f3'
+              title: 'Real-time Analytics'
+              description: 'Track usage, revenue, and user behavior with dashboards.'
+              icon:
+                value: '📊'
+            - id: 'f4'
+              title: 'Scalable Infrastructure'
+              description: 'Auto-scaling, CDN, and global deployment ready.'
+              icon:
+                value: '☁️'
+            - id: 'f5'
+              title: 'Customer Support'
+              description: 'In-app chat, ticketing, and knowledge base integration.'
+              icon:
+                value: '💬'
+            - id: 'f6'
+              title: 'API-First Design'
+              description: 'RESTful APIs for seamless third-party integrations.'
+              icon:
+                value: '📦'
+
+      - type: 'stats'
+        id: 'stats'
+        props:
+          background: 'bg-blue-900'
+          items:
+            - id: 's1'
+              value: '500+'
+              label: 'Startups Launched'
+            - id: 's2'
+              value: '99.9%'
+              label: 'Uptime Guarantee'
+            - id: 's3'
+              value: '24h'
+              label: 'Deployment Time'
+            - id: 's4'
+              value: '98%'
+              label: 'Satisfaction Rate'
+
+      - type: 'testimonials'
+        id: 'testimonials'
+        props:
+          title: 'Success Stories'
+          subtitle: 'See how LaunchPad transformed their business'
+          trustBadge: 'Join 500+ startups launching faster with LaunchPad'
+          items:
+            - id: 't1'
+              content: 'LaunchPad helped us go from idea to MVP in under a week. The billing integration alone saved us months of development.'
+              rating: 5
+              author:
+                name: 'Sarah Chen'
+                role: 'CEO, TechFlow'
+                avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2070&auto=format&fit=crop'
+            - id: 't2'
+              content: 'The scalability and analytics features made our growth predictable and manageable. Highly recommended!'
+              rating: 5
+              author:
+                name: 'Marcus Rodriguez'
+                role: 'CTO, DataPulse'
+                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop'
+
+      - type: 'pricing'
+        id: 'pricing'
+        props:
+          title: 'Simple, Transparent Pricing'
+          subtitle: 'Choose a plan that grows with your business'
+          plans:
+            - id: 'p1'
+              name: 'Starter'
+              price: '$0'
+              period: 'forever'
+              features:
+                - 'Up to 100 users'
+                - 'Basic analytics'
+                - 'Community support'
+                - '5 projects'
+              cta:
+                text: 'Get Started'
+                href: '/signup'
+            - id: 'p2'
+              name: 'Growth'
+              price: '$99'
+              period: 'month'
+              features:
+                - 'Up to 10,000 users'
+                - 'Advanced analytics'
+                - 'Priority support'
+                - 'Unlimited projects'
+                - 'API access'
+              cta:
+                text: 'Start Free Trial'
+                href: '/signup'
+              highlighted: true
+            - id: 'p3'
+              name: 'Enterprise'
+              price: 'Custom'
+              period: ''
+              features:
+                - 'Unlimited users'
+                - 'Custom integrations'
+                - 'Dedicated support'
+                - 'SLA guarantee'
+                - 'On-premise options'
+              cta:
+                text: 'Contact Sales'
+                href: '/contact'
+
+      - type: 'team'
+        id: 'team'
+        props:
+          title: 'The Team Behind LaunchPad'
+          subtitle: 'Meet the experts building your success'
+          items:
+            - id: 'tm1'
+              name: 'Alex Johnson'
+              role: 'Founder & CEO'
+              image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop'
+            - id: 'tm2'
+              name: 'Jamie Smith'
+              role: 'CTO'
+              image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2070&auto=format&fit=crop'
+            - id: 'tm3'
+              name: 'Taylor Brown'
+              role: 'Head of Design'
+              image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop'
+            - id: 'tm4'
+              name: 'Jordan Lee'
+              role: 'Lead Engineer'
+              image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop'
+
+      - type: 'gallery'
+        id: 'gallery'
+        props:
+          title: 'Product Screenshots'
+          subtitle: 'Explore our powerful features in action'
+          images:
+            - id: 'g1'
+              url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+              alt: 'Dashboard Analytics'
+            - id: 'g2'
+              url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+              alt: 'Data Visualization'
+            - id: 'g3'
+              url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
+              alt: 'Team Collaboration'
+            - id: 'g4'
+              url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
+              alt: 'Project Management'
+
+      - type: 'content'
+        id: 'content'
+        props:
+          title: 'Built for Scale'
+          subtitle: 'Architecture that grows with your user base'
+          content: 'Our microservices architecture ensures your application remains performant as you scale from hundreds to millions of users. With built-in caching, database optimization, and CDN integration, your SaaS will deliver lightning-fast experiences globally.'
+
+      - type: 'grid'
+        id: 'grid'
+        props:
+          title: 'Integrations'
+          subtitle: 'Connect with tools you already use'
+          columns: 3
+          items:
+            - id: 'i1'
+              title: 'Stripe'
+              description: 'Payment processing and subscription management'
+            - id: 'i2'
+              title: 'SendGrid'
+              description: 'Email delivery and transactional messaging'
+            - id: 'i3'
+              title: 'Slack'
+              description: 'Team communication and notifications'
+            - id: 'i4'
+              title: 'Zapier'
+              description: 'Workflow automation and app connections'
+            - id: 'i5'
+              title: 'AWS'
+              description: 'Cloud infrastructure and storage'
+            - id: 'i6'
+              title: 'Google Analytics'
+              description: 'Advanced web analytics and reporting'
+
+      - type: 'faq'
+        id: 'faq'
+        props:
+          title: 'Frequently Asked Questions'
+          subtitle: 'Everything you need to know'
+          items:
+            - id: 'faq1'
+              question: 'Can I migrate my existing SaaS to LaunchPad?'
+              answer: 'Yes! We provide migration tools and support to help you transition smoothly with minimal downtime.'
+            - id: 'faq2'
+              question: 'Is there a free tier available?'
+              answer: 'Absolutely! Our Starter plan is completely free and includes everything you need to get started.'
+            - id: 'faq3'
+              question: 'How secure is my data?'
+              answer: 'We use industry-standard encryption, regular security audits, and compliance with GDPR and SOC 2 standards.'
+            - id: 'faq4'
+              question: 'Can I cancel anytime?'
+              answer: 'Yes, you can cancel or downgrade your plan at any time without penalties.'
+
+      - type: 'cta'
+        id: 'cta'
+        props:
+          title: 'Ready to Launch Your SaaS?'
+          subtitle: 'Join thousands of entrepreneurs who've launched faster with LaunchPad'
+          buttons:
+            - text: 'Start Building Now'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'Schedule Demo'
+              href: '/demo'
+              variant: 'outline'
