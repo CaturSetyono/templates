@@ -1,0 +1,384 @@
+site:
+  name: 'WanderLux'
+  description: 'Discover your next adventure'
+  theme:
+    primary: '#0ea5e9' # Sky 500
+    secondary: '#a855f7' # Purple 500
+    accent: '#1e293b' # Slate 800
+  navigation:
+    logo:
+      text: 'WanderLux'
+    links:
+      - text: 'Destinations'
+        href: '#features'
+      - text: 'Experiences'
+        href: '#stats'
+      - text: 'Resources'
+        href: '#'
+        children:
+          - text: 'Travel Guides'
+            href: '/docs'
+          - text: 'Travel Stories'
+            href: '/blog'
+      - text: 'About'
+        href: '/about'
+    cta:
+      text: 'Book Trip'
+      href: '/signup'
+  footer:
+    logo:
+      text: 'WanderLux'
+    tagline: 'Creating unforgettable travel experiences with curated destinations, expert guides, and personalized itineraries.'
+    copyright: ' 2025 WanderLux Travel. All rights reserved.'
+    sections:
+      - title: 'Explore'
+        links:
+          - text: 'All Destinations'
+            href: '#features'
+          - text: 'Popular Tours'
+            href: '#stats'
+          - text: 'Last Minute Deals'
+            href: '/security'
+      - title: 'Company'
+        links:
+          - text: 'About Us'
+            href: '/about'
+          - text: 'Our Guides'
+            href: '/careers'
+          - text: 'Contact'
+            href: '/contact'
+      - title: 'Support'
+        links:
+          - text: 'Travel Tips'
+            href: '/docs'
+          - text: 'Booking Help'
+            href: '/api'
+          - text: 'Trip Status'
+            href: '/status'
+    social:
+      - platform: 'youtube'
+        url: 'https://youtube.com/wanderlux'
+      - platform: 'linkedin'
+        url: 'https://linkedin.com/company/wanderlux'
+      - platform: 'twitter'
+        url: 'https://twitter.com/wanderlux'
+
+pages:
+  - slug: '/'
+    title: 'Home'
+    description: 'WanderLux - Explore the World in Luxury'
+    sections:
+      - type: 'hero'
+        id: 'hero'
+        props:
+          layout: 'centered'
+          title: 'Your Next Adventure Awaits'
+          subtitle: 'Explore 500+ destinations worldwide with expertly curated tours, luxury accommodations, and unforgettable experiences. Book with confidence and travel worry-free.'
+          buttons:
+            - text: 'Explore Destinations'
+              href: '/signup'
+              variant: 'primary'
+            - text: 'View Tours'
+              href: '#features'
+              variant: 'outline'
+          trustIndicators:
+            - '500+ Destinations'
+            - '100K+ Happy Travelers'
+            - '24/7 Support'
+          background:
+            gradient: 'from-sky-50 via-white to-purple-50'
+          image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=1000'
+
+      - type: 'features'
+        id: 'features'
+        props:
+          title: 'Popular Destinations'
+          subtitle: 'Discover the worlds most breathtaking locations.'
+          columns: 3
+          items:
+            - id: 'f1'
+              title: 'Tropical Paradise'
+              description: 'Bali, Maldives, Caribbean islands with pristine beaches and crystal waters.'
+              icon:
+                value: '🏝️'
+            - id: 'f2'
+              title: 'European Cities'
+              description: 'Paris, Rome, Barcelona - explore rich history and vibrant culture.'
+              icon:
+                value: '🏛️'
+            - id: 'f3'
+              title: 'Adventure Tours'
+              description: 'Hiking, safari, diving - thrilling experiences for adrenaline seekers.'
+              icon:
+                value: '🏔️'
+            - id: 'f4'
+              title: 'Cultural Journeys'
+              description: 'Japan, India, Morocco - immerse in ancient traditions and customs.'
+              icon:
+                value: '🎎'
+            - id: 'f5'
+              title: 'Luxury Cruises'
+              description: 'Mediterranean, Alaska, Caribbean - sail in style and comfort.'
+              icon:
+                value: '🚢'
+            - id: 'f6'
+              title: 'Wildlife Safaris'
+              description: 'Africa, Amazon, Galapagos - witness nature in its purest form.'
+              icon:
+                value: '🦁'
+
+      - type: 'stats'
+        id: 'stats'
+        props:
+          background: 'bg-sky-900'
+          items:
+            - id: 's1'
+              value: '500+'
+              label: 'Destinations'
+            - id: 's2'
+              value: '100K+'
+              label: 'Happy Travelers'
+            - id: 's3'
+              value: '98%'
+              label: 'Satisfaction Rate'
+            - id: 's4'
+              value: '4.9/5'
+              label: 'Trip Rating'
+
+      - type: 'testimonials'
+        id: 'testimonials'
+        props:
+          title: 'Traveler Stories'
+          subtitle: 'Hear from our adventurers around the world.'
+          trustBadge: 'Join 100,000 travelers creating unforgettable memories'
+          items:
+            - id: 't1'
+              content: 'The Bali tour was absolutely magical! Every detail was perfectly planned. Best vacation of my life!'
+              rating: 5
+              author:
+                name: 'Rachel Green'
+                role: 'Adventure Seeker'
+            - id: 't2'
+              content: 'Incredible European tour! The guides were knowledgeable and the accommodations were luxurious. Highly recommend!'
+              rating: 5
+              author:
+                name: 'Thomas Anderson'
+                role: 'Culture Enthusiast'
+            - id: 't3'
+              content: 'Safari in Kenya exceeded all expectations. Saw the Big Five and stayed in amazing lodges. Unforgettable experience!'
+              rating: 5
+              author:
+                name: 'Priya Sharma'
+                role: 'Wildlife Lover'
+
+  - slug: '/blog'
+    title: 'Blog'
+    description: 'Travel tips, destination guides, and stories'
+    hero:
+      title: 'WanderLux Blog'
+      subtitle: 'Travel inspiration, expert tips, and destination guides from around the world'
+    categories:
+      - 'All'
+      - 'Destination Guides'
+      - 'Travel Tips'
+      - 'Adventure'
+      - 'Luxury Travel'
+      - 'Budget Travel'
+    posts:
+      - id: 1
+        title: 'Ultimate Guide to Backpacking Southeast Asia'
+        excerpt: 'Everything you need to know for an amazing budget-friendly adventure through Thailand, Vietnam, and Cambodia.'
+        category: 'Destination Guides'
+        date: '15 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800'
+        readTime: '10 min'
+      - id: 2
+        title: '10 Essential Packing Tips for Long Flights'
+        excerpt: 'Make your long-haul flights more comfortable with these expert packing strategies.'
+        category: 'Travel Tips'
+        date: '10 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+      - id: 3
+        title: 'Top 5 Adventure Destinations for 2024'
+        excerpt: 'From mountain climbing to deep-sea diving, discover the most thrilling destinations this year.'
+        category: 'Adventure'
+        date: '5 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800'
+        readTime: '8 min'
+      - id: 4
+        title: 'Luxury Travel on a Budget: Is It Possible?'
+        excerpt: 'Learn how to experience luxury accommodations and experiences without breaking the bank.'
+        category: 'Budget Travel'
+        date: '1 Nov 2024'
+        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800'
+        readTime: '7 min'
+      - id: 5
+        title: 'Hidden Gems of Europe You Must Visit'
+        excerpt: 'Discover lesser-known European destinations that offer authentic experiences away from tourist crowds.'
+        category: 'Destination Guides'
+        date: '28 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=800'
+        readTime: '9 min'
+      - id: 6
+        title: 'How to Stay Safe While Traveling Solo'
+        excerpt: 'Essential safety tips and precautions for solo travelers exploring the world.'
+        category: 'Travel Tips'
+        date: '20 Oct 2024'
+        image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=800'
+        readTime: '6 min'
+    newsletter:
+      title: 'Get Travel Inspiration'
+      description: 'Subscribe for exclusive deals, travel tips, and destination guides'
+      placeholder: 'Your Email'
+      buttonText: 'Subscribe'
+
+  - slug: '/about'
+    title: 'About Us'
+    description: 'Learn more about our mission and team'
+    hero:
+      title: 'About WanderLux'
+      subtitle: 'Since 2016, WanderLux has been crafting extraordinary travel experiences, helping over 100,000 travelers discover the world in comfort, style, and authenticity.'
+    stats:
+      - value: '8+'
+        label: 'Years Experience'
+      - value: '100K+'
+        label: 'Travelers'
+      - value: '500+'
+        label: 'Destinations'
+      - value: '4.9/5'
+        label: 'Trip Rating'
+    mission:
+      title: 'Our Mission'
+      description: 'To inspire and enable people to explore the world through carefully curated travel experiences that combine adventure, luxury, and cultural immersion.'
+      icon: 'vision'
+      gradient: 'from-sky-600 to-sky-700'
+    vision:
+      title: 'Our Vision'
+      description: 'To become the worlds most trusted travel partner by delivering exceptional experiences, sustainable tourism practices, and personalized service that exceeds expectations.'
+      icon: 'mission'
+      gradient: 'from-purple-600 to-purple-700'
+    values:
+      title: 'Our Values'
+      subtitle: 'Principles that guide our travel philosophy'
+      items:
+        - title: 'Authentic Experiences'
+          description: 'Creating genuine connections with local cultures and communities.'
+          icon: 'check'
+        - title: 'Sustainable Tourism'
+          description: 'Protecting destinations for future generations through responsible travel.'
+          icon: 'lightning'
+        - title: 'Personalized Service'
+          description: 'Tailoring every journey to individual preferences and interests.'
+          icon: 'users'
+        - title: 'Safety First'
+          description: 'Ensuring traveler safety and security at every step of the journey.'
+          icon: 'globe'
+    team:
+      title: 'Our Team'
+      subtitle: 'Passionate travelers and industry experts'
+      members:
+        - name: 'Victoria Stone'
+          role: 'CEO & Founder'
+          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Carlos Rivera'
+          role: 'Chief Experience Officer'
+          image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400'
+        - name: 'Aisha Mohammed'
+          role: 'Head of Destinations'
+          image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
+        - name: 'Oliver Bennett'
+          role: 'Director of Operations'
+          image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400'
+
+  - slug: '/docs'
+    title: 'Documentation'
+    description: 'Travel guides and resources'
+    hero:
+      title: 'Travel Guides & Resources'
+      subtitle: 'Comprehensive information to help you plan the perfect trip'
+    guides:
+      - title: 'Planning Your Trip'
+        description: 'Step-by-step guide to planning an unforgettable vacation.'
+        icon: 'code'
+        topics:
+          - 'Choosing Destinations'
+          - 'Best Time to Visit'
+          - 'Budgeting Tips'
+      - title: 'Booking & Payments'
+        description: 'Information about booking process, payments, and cancellations.'
+        icon: 'chart'
+        topics:
+          - 'How to Book'
+          - 'Payment Options'
+          - 'Cancellation Policy'
+      - title: 'Travel Documents'
+        description: 'Essential information about passports, visas, and travel insurance.'
+        icon: 'palette'
+        topics:
+          - 'Passport Requirements'
+          - 'Visa Information'
+          - 'Travel Insurance'
+      - title: 'Packing Guides'
+        description: 'What to pack for different destinations and trip types.'
+        icon: 'briefcase'
+        topics:
+          - 'Tropical Destinations'
+          - 'Cold Weather Travel'
+          - 'Adventure Trips'
+      - title: 'Health & Safety'
+        description: 'Staying healthy and safe during your travels.'
+        icon: 'rocket'
+        topics:
+          - 'Vaccinations'
+          - 'Travel Safety Tips'
+          - 'Emergency Contacts'
+      - title: 'Cultural Etiquette'
+        description: 'Respecting local customs and traditions around the world.'
+        icon: 'book'
+        topics:
+          - 'Dress Codes'
+          - 'Dining Etiquette'
+          - 'Local Customs'
+
+  - slug: '/status'
+    title: 'Trip Status'
+    description: 'Track your booking and itinerary'
+    hero:
+      title: 'Your Trip Details'
+      subtitle: 'View your booking status and travel itinerary'
+    searchPlaceholder: 'Enter your Booking ID or Email'
+    searchButton: 'Track'
+    recentTitle: 'Upcoming Trips'
+    statuses:
+      - orderId: 'WL-2024-001'
+        customer: 'Sophie Martin'
+        location: 'Bali, Indonesia'
+        status: 'Confirmed'
+        estimatedArrival: 'Departs Dec 20'
+        progress: 85
+      - orderId: 'WL-2024-002'
+        customer: 'David Kim'
+        location: 'Paris, France'
+        status: 'Planning'
+        estimatedArrival: 'Departs Jan 15'
+        progress: 45
+      - orderId: 'WL-2024-003'
+        customer: 'Laura Santos'
+        location: 'Tokyo, Japan'
+        status: 'Completed'
+        estimatedArrival: 'Returned'
+        progress: 100
+
+  - slug: '/api'
+    title: 'Trip Calculator'
+    description: 'Estimate your travel costs'
+    hero:
+      title: 'Travel Cost Calculator'
+      subtitle: 'Estimate total trip costs including flights, accommodation, and activities'
+    comingSoon:
+      title: 'Feature Coming Soon'
+      description: 'Our comprehensive trip calculator is under development. Soon you can estimate costs for flights, hotels, activities, and create detailed travel budgets.'
+      icon: 'calculator'
+      buttonText: 'Contact Travel Advisor'
+      buttonHref: '/signup'
