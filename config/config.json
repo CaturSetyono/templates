@@ -1,0 +1,431 @@
+{
+  "site": {
+    "name": "Create SAAS Web",
+    "description": "All-in-one platform for building and managing your SaaS business.",
+    "theme": {
+      "primary": "#3B82F6",
+      "secondary": "#10B981",
+      "accent": "#F59E0B"
+    },
+    "navigation": {
+      "logo": {
+        "text": "Create SAAS Web"
+      },
+      "links": [
+        {
+          "text": "Features",
+          "href": "#features"
+        },
+        {
+          "text": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "text": "Resources",
+          "href": "#",
+          "children": [
+            {
+              "text": "Blog",
+              "href": "/blog"
+            },
+            {
+              "text": "Docs",
+              "href": "/docs"
+            },
+            {
+              "text": "Status",
+              "href": "/status"
+            }
+          ]
+        },
+        {
+          "text": "Company",
+          "href": "#",
+          "children": [
+            {
+              "text": "About",
+              "href": "/about"
+            },
+            {
+              "text": "Contact",
+              "href": "/contact"
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Get Started",
+        "href": "/signup"
+      }
+    },
+    "footer": {
+      "logo": {
+        "text": "Create SAAS Web"
+      },
+      "tagline": "Build, scale, and manage your SaaS.",
+      "copyright": "© 2025 Create SAAS Web",
+      "sections": [
+        {
+          "title": "Product",
+          "links": [
+            {
+              "text": "Features",
+              "href": "#features"
+            },
+            {
+              "text": "API",
+              "href": "/api"
+            }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            {
+              "text": "About",
+              "href": "/about"
+            },
+            {
+              "text": "Careers",
+              "href": "/careers"
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            {
+              "text": "Help Center",
+              "href": "/help"
+            },
+            {
+              "text": "Status",
+              "href": "/status"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            {
+              "text": "Blog",
+              "href": "/blog"
+            },
+            {
+              "text": "Docs",
+              "href": "/docs"
+            }
+          ]
+        }
+      ],
+      "social": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/createsaasweb"
+        },
+        {
+          "platform": "github",
+          "url": "https://github.com/createsaasweb"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://linkedin.com/company/createsaasweb"
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "slug": "/",
+      "title": "Home",
+      "description": "All-in-one platform for building and managing your SaaS business.",
+      "sections": [
+        {
+          "type": "hero",
+          "id": "hero",
+          "props": {
+            "layout": "centered",
+            "title": "Launch Your SaaS Faster",
+            "subtitle": "Everything you need to build, scale, and grow your product.",
+            "buttons": [
+              {
+                "text": "Get Started",
+                "href": "/signup",
+                "variant": "primary"
+              },
+              {
+                "text": "View Demo",
+                "href": "/demo",
+                "variant": "secondary"
+              }
+            ],
+            "trustIndicators": [
+              "500K+ Users",
+              "99.9% Uptime",
+              "Trusted by 10K+ Companies"
+            ],
+            "background": {
+              "gradient": "from-blue-50 to-white"
+            },
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+          }
+        },
+        {
+          "type": "features",
+          "id": "features",
+          "props": {
+            "title": "Powerful Features",
+            "subtitle": "Everything you need to build and scale your product.",
+            "columns": 3,
+            "items": [
+              {
+                "id": "f1",
+                "title": "User Management",
+                "description": "Securely onboard and manage users with role-based permissions.",
+                "icon": {
+                  "value": "👥"
+                }
+              },
+              {
+                "id": "f2",
+                "title": "Billing & Subscriptions",
+                "description": "Flexible billing, subscription management, and automated invoicing.",
+                "icon": {
+                  "value": "💳"
+                }
+              },
+              {
+                "id": "f3",
+                "title": "Analytics",
+                "description": "Track usage, revenue, and user behavior with powerful insights.",
+                "icon": {
+                  "value": "📊"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "stats",
+          "id": "stats",
+          "props": {
+            "background": "bg-blue-900",
+            "items": [
+              {
+                "id": "s1",
+                "value": "500K+",
+                "label": "Active Users"
+              },
+              {
+                "id": "s2",
+                "value": "99.9%",
+                "label": "Uptime"
+              },
+              {
+                "id": "s3",
+                "value": "10K+",
+                "label": "Happy Companies"
+              }
+            ]
+          }
+        },
+        {
+          "type": "testimonials",
+          "id": "testimonials",
+          "props": {
+            "title": "What People Say",
+            "subtitle": "Hear from our users.",
+            "trustBadge": "Trusted by thousands",
+            "items": [
+              {
+                "id": "t1",
+                "content": "Create SAAS Web saved us months of development time.",
+                "rating": 5,
+                "author": {
+                  "name": "Jane Doe",
+                  "role": "CTO, TechCorp"
+                }
+              },
+              {
+                "id": "t2",
+                "content": "Reliable, scalable, and feature-rich. Highly recommend!",
+                "rating": 5,
+                "author": {
+                  "name": "John Smith",
+                  "role": "Founder, StartupX"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "/blog",
+      "title": "Blog",
+      "description": "Latest articles and insights.",
+      "hero": {
+        "title": "Blog",
+        "subtitle": "Latest articles and insights."
+      },
+      "categories": [
+        "All",
+        "News",
+        "Guides",
+        "Updates"
+      ],
+      "posts": [
+        {
+          "id": 1,
+          "title": "How to Launch Your SaaS in 30 Days",
+          "excerpt": "A step-by-step guide to building and launching your SaaS product.",
+          "category": "Guides",
+          "date": "15 Nov 2024",
+          "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+          "readTime": "5 min"
+        },
+        {
+          "id": 2,
+          "title": "New Features: Enhanced Analytics",
+          "excerpt": "Introducing powerful analytics to help you grow your SaaS.",
+          "category": "News",
+          "date": "10 Nov 2024",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+          "readTime": "3 min"
+        }
+      ],
+      "newsletter": {
+        "title": "Subscribe",
+        "description": "Get the latest updates and guides.",
+        "placeholder": "Email",
+        "buttonText": "Subscribe"
+      }
+    },
+    {
+      "slug": "/about",
+      "title": "About",
+      "description": "Learn about our mission and values.",
+      "hero": {
+        "title": "About Us",
+        "subtitle": "Our story and mission."
+      },
+      "stats": [
+        {
+          "value": "5+",
+          "label": "Years"
+        },
+        {
+          "value": "100+",
+          "label": "Team Members"
+        },
+        {
+          "value": "1M+",
+          "label": "Happy Users"
+        }
+      ],
+      "mission": {
+        "title": "Mission",
+        "description": "To empower entrepreneurs to build and scale their SaaS businesses.",
+        "icon": "vision",
+        "gradient": "from-blue-600 to-blue-700"
+      },
+      "vision": {
+        "title": "Vision",
+        "description": "A world where launching a SaaS is fast, simple, and accessible.",
+        "icon": "mission",
+        "gradient": "from-green-600 to-green-700"
+      },
+      "values": {
+        "title": "Values",
+        "subtitle": "What we believe in.",
+        "items": [
+          {
+            "title": "Innovation",
+            "description": "We embrace innovation to solve complex problems.",
+            "icon": "check"
+          },
+          {
+            "title": "Customer Focus",
+            "description": "Our customers' success is our success.",
+            "icon": "check"
+          },
+          {
+            "title": "Integrity",
+            "description": "We operate with honesty and transparency.",
+            "icon": "check"
+          }
+        ]
+      },
+      "team": {
+        "title": "Team",
+        "subtitle": "Meet the team behind Create SAAS Web.",
+        "members": [
+          {
+            "name": "Alice Johnson",
+            "role": "CEO & Co-Founder",
+            "image": "https://images.unsplash.com/photo-1494790108785-571f67399a11?q=80&w=687&auto=format&fit=crop"
+          },
+          {
+            "name": "Bob Smith",
+            "role": "CTO & Co-Founder",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "/docs",
+      "title": "Docs",
+      "description": "Documentation and guides.",
+      "hero": {
+        "title": "Documentation",
+        "subtitle": "Find guides and references."
+      },
+      "guides": [
+        {
+          "title": "Getting Started",
+          "description": "Learn how to get started with our platform.",
+          "link": "/docs/getting-started"
+        },
+        {
+          "title": "API Reference",
+          "description": "Complete API documentation.",
+          "link": "/docs/api"
+        }
+      ]
+    },
+    {
+      "slug": "/status",
+      "title": "Status",
+      "description": "System status and tracking.",
+      "hero": {
+        "title": "System Status",
+        "subtitle": "Real-time service status."
+      },
+      "statuses": [
+        {
+          "service": "API",
+          "status": "Operational"
+        },
+        {
+          "service": "Billing",
+          "status": "Degraded Performance"
+        },
+        {
+          "service": "Auth",
+          "status": "Operational"
+        }
+      ]
+    },
+    {
+      "slug": "/api",
+      "title": "API",
+      "description": "Calculator and API tools.",
+      "hero": {
+        "title": "API Tools",
+        "subtitle": "Coming soon."
+      },
+      "comingSoon": true
+    }
+  ]
+}
