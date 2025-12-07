@@ -1,683 +1,449 @@
-# Configuration File Documentation
+# Config API Structure Documentation
 
 ## Overview
 
-This documentation describes the structure and schema of the YAML configuration files used to define website content, styling, and layout. These configuration files drive the dynamic rendering system of the web builder.
+This directory contains configuration files that define the complete structure and content for the web builder application. Each config file follows the same YAML structure but contains different content themes, making it easy to generate new websites for different industries.
 
-## File Structure
+## Available Config Files
 
-Each configuration file follows this structure:
+| File | Theme | Description |
+|------|-------|-------------|
+| `config.yaml` | **FitLife Pro** | Fitness & Wellness platform |
+| `config-ecommerce.yaml` | **ShopHub** | E-commerce & Online Shopping |
+| `config-restaurant.yaml` | **TasteBite** | Food Delivery & Restaurant |
+| `config-travel.yaml` | **WanderLux** | Travel & Tourism |
+| `config-realestate.yaml` | **HomeFinder** | Real Estate & Property |
+| `config-saas.yaml` | **CloudFlow** | SaaS & Software Platform |
+| `config.example.json` | **CloudFlow** | Example JSON format (same as config-saas.yaml) |
+
+## File Format Support
+
+The application supports **both YAML and JSON** config files with automatic fallback:
+
+### Priority Order
+1. **`config.yaml`** - Checked first (YAML format)
+2. **`config.json`** - Fallback if YAML not found (JSON format)
+
+### Format Selection
+- If both files exist, **YAML takes precedence**
+- You can use either format based on your preference
+- Both formats support the exact same structure
+
+### Converting Between Formats
+
+**YAML to JSON:**
+```bash
+node -e "const yaml = require('js-yaml'); const fs = require('fs'); const config = yaml.load(fs.readFileSync('config/config.yaml', 'utf8')); fs.writeFileSync('config/config.json', JSON.stringify(config, null, 2));"
+```
+
+**JSON to YAML:**
+```bash
+node -e "const yaml = require('js-yaml'); const fs = require('fs'); const config = JSON.parse(fs.readFileSync('config/config.json', 'utf8')); fs.writeFileSync('config/config.yaml', yaml.dump(config));"
+```
+
+## Configuration Structure
+
+### 1. Site-Level Configuration
 
 ```yaml
 site:
-  name: string
-  description: string
+  name: string                    # Brand name
+  description: string             # Site description
   theme:
-    primary: string (hex color)
-    secondary: string (hex color)
-    accent: string (hex color)
-  navigation: {...}
-  footer: {...}
-
-sections:
-  - type: string
-    ...properties
+    primary: string               # Primary color (hex)
+    secondary: string             # Secondary color (hex)
+    accent: string                # Accent color (hex)
+  navigation:
+    logo:
+      text: string                # Logo text
+    links: array                  # Navigation menu items
+      - text: string              # Link text
+        href: string              # Link URL
+        children: array           # Optional dropdown items
+    cta:
+      text: string                # CTA button text
+      href: string                # CTA button URL
+  footer:
+    logo:
+      text: string                # Footer logo text
+    tagline: string               # Footer tagline
+    copyright: string             # Copyright text
+    sections: array               # Footer link sections
+      - title: string             # Section title
+        links: array              # Section links
+    social: array                 # Social media links
+      - platform: string          # Platform name
+        url: string               # Profile URL
 ```
 
----
+### 2. Page Configuration
 
-## Site Configuration
-
-### `site.name`
-
-- **Type**: `string`
-- **Required**: Yes
-- **Description**: The brand name or website title
-- **Example**: `"CloudFlow"`, `"Bella Italia"`
-
-### `site.description`
-
-- **Type**: `string`
-- **Required**: Yes
-- **Description**: Brief description of the website/business
-- **Example**: `"Modern SaaS platform for team collaboration"`
-
-### `site.theme`
-
-Theme colors that define the visual identity of the site.
-
-#### Properties:
-
-- **`primary`** (string): Main brand color in hex format (e.g., `"#3b82f6"`)
-- **`secondary`** (string): Secondary accent color in hex format (e.g., `"#8b5cf6"`)
-- **`accent`** (string): Contrast color for emphasis in hex format (e.g., `"#0f172a"`)
-
-**Example**:
+Each page is defined in the `pages` array with the following structure:
 
 ```yaml
-theme:
-  primary: '#3b82f6' # Blue 500
-  secondary: '#8b5cf6' # Violet 500
-  accent: '#0f172a' # Slate 900
+pages:
+  - slug: string                  # URL path (e.g., '/', '/blog')
+    title: string                 # Page title
+    description: string           # Page meta description
+    sections: array               # Page sections (for home page)
+    hero: object                  # Hero section (for other pages)
+    # Additional page-specific fields
 ```
 
----
+### 3. Section Types
 
-## Navigation Configuration
-
-### `site.navigation`
-
-Defines the header navigation menu structure.
-
-#### Properties:
-
-##### `logo` (object)
-
-- **`text`** (string): Logo text to display
-
-##### `links` (array of objects)
-
-Navigation menu items. Each link object has:
-
-- **`text`** (string): Display text for the link
-- **`href`** (string): URL or anchor link (e.g., `"/about"`, `"#features"`)
-- **`children`** (array, optional): Dropdown menu items with same structure
-
-##### `cta` (object)
-
-Call-to-action button in navigation:
-
-- **`text`** (string): Button text
-- **`href`** (string): Button destination URL
-
-**Example**:
-
-```yaml
-navigation:
-  logo:
-    text: 'CloudFlow'
-  links:
-    - text: 'Features'
-      href: '#features'
-    - text: 'Pricing'
-      href: '#pricing'
-    - text: 'Resources'
-      href: '#'
-      children:
-        - text: 'Documentation'
-          href: '/docs'
-        - text: 'API Reference'
-          href: '/api'
-        - text: 'Blog'
-          href: '/blog'
-    - text: 'About'
-      href: '/about'
-  cta:
-    text: 'Start Free Trial'
-    href: '/signup'
-```
-
----
-
-## Footer Configuration
-
-### `site.footer`
-
-Defines the footer content and structure.
-
-#### Properties:
-
-##### `logo` (object)
-
-- **`text`** (string): Footer logo text
-
-##### `tagline` (string)
-
-- Brief company tagline or mission statement
-
-##### `copyright` (string)
-
-- Copyright notice text
-
-##### `sections` (array of objects)
-
-Footer column sections. Each section has:
-
-- **`title`** (string): Section heading
-- **`links`** (array): Links in this section
-  - **`text`** (string): Link text
-  - **`href`** (string): Link URL
-
-**Example**:
-
-```yaml
-footer:
-  logo:
-    text: 'CloudFlow'
-  tagline: 'Streamline your workflow with intelligent automation.'
-  copyright: '© 2025 CloudFlow Inc. All rights reserved.'
-  sections:
-    - title: 'Product'
-      links:
-        - text: 'Features'
-          href: '#features'
-        - text: 'Pricing'
-          href: '#pricing'
-    - title: 'Company'
-      links:
-        - text: 'About Us'
-          href: '/about'
-        - text: 'Careers'
-          href: '/careers'
-```
-
----
-
-## Sections
-
-The `sections` array defines the page content blocks. Each section has a `type` and type-specific properties.
-
-### Common Section Properties
-
-Most sections support these optional properties:
-
-- **`title`** (string): Section heading
-- **`subtitle`** (string): Section subheading/description
-
----
-
-## Section Types
-
-### 1. Hero Section
-
-**Type**: `"hero"`
-
-The main banner section, typically at the top of the page.
-
-#### Properties:
-
-- **`alignment`** (string): Content alignment - `"left"`, `"center"`, or `"right"`
-- **`title`** (string, required): Main headline
-- **`subtitle`** (string): Supporting text
-- **`cta`** (object): Call-to-action buttons
-  - **`primary`** (object): Main CTA button
-    - `text` (string): Button text
-    - `href` (string): Button URL
-  - **`secondary`** (object, optional): Secondary button
-    - `text` (string): Button text
-    - `href` (string): Button URL
-- **`image`** (object, optional): Hero image
-  - `src` (string): Image URL
-  - `alt` (string): Alt text for accessibility
-
-**Example**:
-
+#### Hero Section
 ```yaml
 - type: 'hero'
-  alignment: 'center'
-  title: 'Collaborate Smarter, Work Faster'
-  subtitle: 'CloudFlow brings your team together with powerful tools.'
-  cta:
-    primary:
-      text: 'Start Free Trial'
-      href: '/signup'
-    secondary:
-      text: 'Watch Demo'
-      href: '#demo'
-  image:
-    src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200'
-    alt: 'Team collaboration'
+  id: string
+  props:
+    layout: string                # Layout type (e.g., 'centered')
+    title: string                 # Main heading
+    subtitle: string              # Subheading
+    buttons: array                # CTA buttons
+      - text: string
+        href: string
+        variant: string           # 'primary' or 'outline'
+    trustIndicators: array        # Trust badges
+    background:
+      gradient: string            # Tailwind gradient classes
+    image: string                 # Hero image URL
 ```
 
----
-
-### 2. Logo Cloud Section
-
-**Type**: `"logo-cloud"`
-
-Displays a row of company/partner logos.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`logos`** (array of objects, required): Logo list
-  - **`name`** (string): Company name
-  - **`src`** (string): Logo image URL
-
-**Example**:
-
-```yaml
-- type: 'logo-cloud'
-  title: 'Trusted by innovative teams worldwide'
-  logos:
-    - name: 'TechCorp'
-      src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=TechCorp'
-    - name: 'DataFlow'
-      src: 'https://via.placeholder.com/150x50/3b82f6/ffffff?text=DataFlow'
-```
-
----
-
-### 3. Features Section
-
-**Type**: `"features"`
-
-Showcases product features or benefits.
-
-#### Properties:
-
-- **`layout`** (string): Display layout - `"grid"` or `"alternate"`
-  - `grid`: Features in a grid layout
-  - `alternate`: Features in alternating left/right layout with more detail
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`items`** (array of objects, required): Feature list
-  - **`icon`** (string): Emoji or icon
-  - **`title`** (string): Feature name
-  - **`description`** (string): Feature description
-
-**Example**:
-
+#### Features Section
 ```yaml
 - type: 'features'
-  layout: 'grid'
-  title: 'Everything you need to succeed'
-  subtitle: 'Powerful features designed for modern teams'
-  items:
-    - icon: '🚀'
-      title: 'Lightning Fast'
-      description: 'Built for speed with cutting-edge technology.'
-    - icon: '🔒'
-      title: 'Enterprise Security'
-      description: 'Bank-level encryption and compliance.'
+  id: string
+  props:
+    title: string                 # Section title
+    subtitle: string              # Section subtitle
+    columns: number               # Grid columns (2 or 3)
+    items: array                  # Feature items
+      - id: string
+        title: string
+        description: string
+        icon:
+          value: string           # Emoji or icon
 ```
 
----
-
-### 4. Stats Section
-
-**Type**: `"stats"`
-
-Displays key metrics or achievements.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`items`** (array of objects, required): Statistics list
-  - **`value`** (string): The metric value (e.g., "50K+", "99.9%")
-  - **`label`** (string): Metric description
-
-**Example**:
-
+#### Stats Section
 ```yaml
 - type: 'stats'
-  title: 'Proven results that speak for themselves'
-  items:
-    - value: '50K+'
-      label: 'Active Teams'
-    - value: '99.9%'
-      label: 'Uptime SLA'
-    - value: '2M+'
-      label: 'Tasks Completed'
+  id: string
+  props:
+    background: string            # Background color class
+    items: array                  # Stat items
+      - id: string
+        value: string             # Stat value
+        label: string             # Stat label
 ```
 
----
-
-### 5. Testimonials Section
-
-**Type**: `"testimonials"`
-
-Customer reviews and testimonials.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`items`** (array of objects, required): Testimonial list
-  - **`quote`** (string): Testimonial text
-  - **`author`** (string): Person's name
-  - **`role`** (string): Person's job title
-  - **`company`** (string): Company name (optional)
-  - **`avatar`** (string): Avatar image URL
-
-**Example**:
-
+#### Testimonials Section
 ```yaml
 - type: 'testimonials'
-  title: 'Loved by teams around the world'
-  subtitle: 'See what our customers have to say'
-  items:
-    - quote: 'CloudFlow transformed how our team works.'
-      author: 'Sarah Chen'
-      role: 'VP of Engineering'
-      company: 'TechCorp'
-      avatar: 'https://i.pravatar.cc/150?img=1'
+  id: string
+  props:
+    title: string                 # Section title
+    subtitle: string              # Section subtitle
+    trustBadge: string            # Trust indicator text
+    items: array                  # Testimonial items
+      - id: string
+        content: string           # Testimonial text
+        rating: number            # 1-5 rating
+        author:
+          name: string
+          role: string
 ```
 
----
-
-### 6. Pricing Section
-
-**Type**: `"pricing"`
-
-Displays pricing plans/tiers.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`items`** (array of objects, required): Pricing plan list
-  - **`name`** (string): Plan name
-  - **`price`** (string): Price amount (e.g., "$9", "Custom")
-  - **`period`** (string): Billing period (e.g., "/month", "/year", "")
-  - **`description`** (string): Plan description
-  - **`features`** (array of strings): List of features included
-  - **`cta`** (object): Call-to-action button
-    - `text` (string): Button text
-    - `href` (string): Button URL
-  - **`highlighted`** (boolean): Whether to highlight this plan
-
-**Example**:
+### 4. Blog Page Structure
 
 ```yaml
-- type: 'pricing'
-  title: 'Simple, transparent pricing'
-  subtitle: 'Choose the perfect plan for your team'
-  items:
-    - name: 'Professional'
-      price: '$29'
-      period: '/user/month'
-      description: 'For growing teams that need more power'
-      features:
-        - 'Unlimited users'
-        - '100 GB storage'
-        - 'Advanced integrations'
-        - 'Priority support'
-      cta:
-        text: 'Start Free Trial'
-        href: '/signup?plan=pro'
-      highlighted: true
+- slug: '/blog'
+  title: string
+  description: string
+  hero:
+    title: string
+    subtitle: string
+  categories: array               # Category filter options
+  posts: array                    # Blog post items
+    - id: number
+      title: string
+      excerpt: string
+      category: string
+      date: string
+      image: string               # Post image URL
+      readTime: string
+  newsletter:
+    title: string
+    description: string
+    placeholder: string
+    buttonText: string
 ```
 
----
-
-### 7. Team Section
-
-**Type**: `"team"`
-
-Displays team members or staff.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`members`** (array of objects, required): Team member list
-  - **`name`** (string): Member name
-  - **`role`** (string): Job title/position
-  - **`bio`** (string): Short biography
-  - **`image`** (string): Profile photo URL
-
-**Example**:
+### 5. About Page Structure
 
 ```yaml
-- type: 'team'
-  title: 'Meet Our Team'
-  subtitle: 'Passionate people behind your dining experience'
-  members:
-    - name: 'Marco Rossi'
-      role: 'Executive Chef'
-      bio: 'Trained in Rome, Marco brings 20 years of expertise.'
-      image: 'https://i.pravatar.cc/300?img=12'
+- slug: '/about'
+  title: string
+  description: string
+  hero:
+    title: string
+    subtitle: string
+  stats: array                    # Quick stats
+    - value: string
+      label: string
+  mission:
+    title: string
+    description: string
+    icon: string
+    gradient: string
+  vision:
+    title: string
+    description: string
+    icon: string
+    gradient: string
+  values:
+    title: string
+    subtitle: string
+    items: array
+      - title: string
+        description: string
+        icon: string
+  team:
+    title: string
+    subtitle: string
+    members: array
+      - name: string
+        role: string
+        image: string             # Team member photo URL
 ```
 
----
-
-### 8. Gallery Section
-
-**Type**: `"gallery"`
-
-Image gallery grid.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`images`** (array of objects, required): Image list
-  - **`src`** (string): Image URL
-  - **`alt`** (string): Alt text for accessibility
-
-**Example**:
+### 6. Docs Page Structure
 
 ```yaml
-- type: 'gallery'
-  title: 'Taste of Italy'
-  subtitle: 'A visual journey through our culinary creations'
-  images:
-    - src: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600'
-      alt: 'Pasta dish'
-    - src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600'
-      alt: 'Pizza margherita'
+- slug: '/docs'
+  title: string
+  description: string
+  hero:
+    title: string
+    subtitle: string
+  guides: array                   # Documentation guides
+    - title: string
+      description: string
+      icon: string
+      topics: array               # Guide topics
 ```
 
----
-
-### 9. Content Section
-
-**Type**: `"content"`
-
-Text content with optional side image.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`content`** (string): Main text content (supports markdown)
-- **`image`** (object, optional): Side image
-  - **`src`** (string): Image URL
-  - **`alt`** (string): Alt text
-  - **`position`** (string): Image position - `"left"` or `"right"`
-
-**Example**:
+### 7. Status/Tracking Page Structure
 
 ```yaml
-- type: 'content'
-  title: 'Programs Designed for You'
-  subtitle: 'Whatever your fitness goal, we have a program'
-  content: |
-    At FitFusion, we believe fitness is personal.
-
-    **Strength Training** - Build muscle and increase power.
-    **Cardio & HIIT** - Burn calories and boost endurance.
-  image:
-    src: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800'
-    alt: 'Fitness training session'
-    position: 'right'
+- slug: '/status'
+  title: string
+  description: string
+  hero:
+    title: string
+    subtitle: string
+  searchPlaceholder: string
+  searchButton: string
+  recentTitle: string
+  statuses: array                 # Status items
+    - orderId: string
+      customer: string
+      location: string
+      status: string
+      estimatedArrival: string
+      progress: number            # 0-100
 ```
 
----
-
-### 10. Grid Section
-
-**Type**: `"grid"`
-
-Generic grid layout for cards or categories.
-
-#### Properties:
-
-- **`title`** (string): Section title
-- **`subtitle`** (string): Section subtitle
-- **`items`** (array of objects, required): Grid items
-  - **`title`** (string): Item title
-  - **`description`** (string): Item description
-  - **`image`** (string): Item image URL
-  - **`link`** (string): Item link URL
-
-**Example**:
+### 8. API/Calculator Page Structure
 
 ```yaml
-- type: 'grid'
-  title: 'Shop by Category'
-  subtitle: "Find exactly what you're looking for"
-  items:
-    - title: "Women's Collection"
-      description: 'Elegant dresses, tops, and more'
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400'
-      link: '/shop/women'
+- slug: '/api'
+  title: string
+  description: string
+  hero:
+    title: string
+    subtitle: string
+  comingSoon:
+    title: string
+    description: string
+    icon: string
+    buttonText: string
+    buttonHref: string
 ```
 
----
+## How to Use This Config
 
-### 11. FAQ Section
+### For Manual Content Updates
 
-**Type**: `"faq"`
+1. Choose the appropriate config file for your industry
+2. Choose your preferred format (YAML or JSON)
+3. Edit the values to match your brand and content
+4. Update colors in the `theme` section
+5. Modify text content throughout the file
+6. Replace image URLs with your own assets
+7. Save as `config.yaml` or `config.json` and the application will automatically use it
 
-Frequently asked questions.
+### For AI-Generated Configs
 
-#### Properties:
+When generating a new config file with AI, provide this structure and specify:
 
-- **`title`** (string): Section title
-- **`items`** (array of objects, required): FAQ list
-  - **`question`** (string): The question
-  - **`answer`** (string): The answer
+1. **Industry/Theme**: What type of business (e.g., "healthcare", "education", "finance")
+2. **Brand Name**: The company/product name
+3. **Color Scheme**: Primary and secondary colors (or let AI choose)
+4. **Key Features**: Main features or services to highlight
+5. **Target Audience**: Who the website is for
 
-**Example**:
-
-```yaml
-- type: 'faq'
-  title: 'Frequently Asked Questions'
-  items:
-    - question: 'Do I need experience to join?'
-      answer: 'Not at all! We welcome members of all fitness levels.'
-    - question: 'What should I bring to my first class?'
-      answer: 'Just bring comfortable workout clothes and a water bottle.'
+**Example Prompt for YAML:**
+```
+Create a config.yaml for a healthcare telemedicine platform called "HealthConnect" 
+with a blue and green color scheme, targeting patients seeking remote medical consultations.
 ```
 
----
-
-### 12. CTA Section
-
-**Type**: `"cta"`
-
-Call-to-action section (typically at end of page).
-
-#### Properties:
-
-- **`title`** (string): CTA headline
-- **`subtitle`** (string): Supporting text
-- **`cta`** (object): Action buttons
-  - **`primary`** (object): Main CTA button
-    - `text` (string): Button text
-    - `href` (string): Button URL
-  - **`secondary`** (object, optional): Secondary button
-    - `text` (string): Button text
-    - `href` (string): Button URL
-
-**Example**:
-
-```yaml
-- type: 'cta'
-  title: 'Ready to transform your workflow?'
-  subtitle: 'Join 50,000+ teams already using CloudFlow'
-  cta:
-    primary:
-      text: 'Start Free Trial'
-      href: '/signup'
-    secondary:
-      text: 'Schedule Demo'
-      href: '/demo'
+**Example Prompt for JSON:**
+```
+Create a config.json for a healthcare telemedicine platform called "HealthConnect" 
+with a blue and green color scheme, targeting patients seeking remote medical consultations.
+Use JSON format.
 ```
 
----
+The AI will generate a complete config file following this exact structure with appropriate content.
 
-## Example Templates
+## Field Types Reference
 
-The following pre-configured templates are available:
+| Type | Description | Example |
+|------|-------------|---------|
+| `string` | Text value | `"Welcome to our site"` |
+| `number` | Numeric value | `3`, `100`, `4.5` |
+| `array` | List of items | `['item1', 'item2']` |
+| `object` | Nested structure | `{ key: value }` |
+| `boolean` | True/false | `true`, `false` |
 
-1. **config-saas-tech.yaml** - SaaS/Technology platform (CloudFlow)
-2. **config-restaurant.yaml** - Restaurant/Food service (Bella Italia)
-3. **config-fitness.yaml** - Fitness/Wellness studio (FitFusion)
-4. **config-agency.yaml** - Creative/Digital agency (PixelCraft)
-5. **config-ecommerce.yaml** - E-commerce/Fashion store (StyleHub)
-6. **config-learnhub.yaml** - Education/Learning platform (LearnHub)
+## Color Format
+
+Colors should be specified in hex format:
+- `#rgb` or `#rrggbb`
+- Example: `#3b82f6` (blue), `#ef4444` (red)
+
+You can also reference Tailwind CSS colors:
+- `#3b82f6` = Blue 500
+- `#ef4444` = Red 500
+- `#10b981` = Emerald 500
+
+## Image URLs
+
+All image URLs should be:
+- **Absolute URLs** (starting with `http://` or `https://`)
+- **High quality** (recommended minimum 800px width)
+- **Optimized** for web (use services like Unsplash with `auto=format&fit=crop&q=80`)
+
+Example: `https://images.unsplash.com/photo-123456?auto=format&fit=crop&q=80&w=1000`
 
 ## Best Practices
 
-### Color Selection
+### Content Writing
+- **Titles**: Keep under 60 characters for SEO
+- **Descriptions**: 120-160 characters for meta descriptions
+- **Headings**: Clear, action-oriented, benefit-focused
+- **CTAs**: Use action verbs (Start, Get, Join, Discover)
 
-- Use hex color codes for consistency
-- Ensure sufficient contrast between primary/secondary colors
-- Test colors for accessibility (WCAG AA compliance)
+### Structure
+- **Consistency**: All pages should follow the same pattern
+- **IDs**: Use unique IDs for all items (f1, f2, s1, s2, etc.)
+- **Sections**: Maintain the same section order across configs
+- **Navigation**: Keep navigation structure consistent
 
-### Content Guidelines
+### Images
+- Use consistent aspect ratios within each section
+- Prefer landscape orientation for hero images (16:9)
+- Use square images for team members (1:1)
+- Optimize images for web performance
 
-- Keep titles concise (5-10 words)
-- Subtitles should be 10-20 words
-- Feature descriptions: 10-25 words
-- Testimonial quotes: 20-50 words
+### Colors
+- Ensure sufficient contrast for accessibility
+- Use primary color for main CTAs
+- Use secondary color for accents and highlights
+- Keep accent color for borders and subtle elements
 
-### Image URLs
+## Validation Checklist
 
-- Use HTTPS URLs
-- Recommended image sizes:
-  - Hero images: 1200px+ width
-  - Gallery images: 600-800px width
-  - Avatars: 150-300px square
-  - Logos: 150x50px recommended
-- Always include descriptive `alt` text
-
-### Navigation Structure
-
-- Limit top-level links to 5-7 items
-- Use dropdowns (`children`) for related content
-- Ensure mobile-friendly navigation
-- CTA button should stand out
-
-### Section Order Recommendations
-
-1. Hero (always first)
-2. Logo Cloud (social proof)
-3. Features or Stats
-4. Content sections
-5. Testimonials
-6. Pricing (if applicable)
-7. FAQ (if applicable)
-8. CTA (always last)
-
----
-
-## AI Integration Guidelines
-
-When generating or modifying configuration files:
-
-1. **Maintain Structure**: Always follow the schema exactly as documented
-2. **Required Fields**: Never omit required properties
-3. **Consistent Naming**: Use lowercase kebab-case for file names
-4. **Brand Cohesion**: Ensure colors, content, and imagery align with the brand
-5. **Section Flow**: Order sections logically for user experience
-6. **Content Quality**: Write clear, engaging copy appropriate to the industry
-7. **Accessibility**: Include alt text for all images
-8. **Links**: Ensure all href values are valid (use # for anchors, / for routes)
-
----
-
-## Validation
-
-Before deploying a configuration file, verify:
+Before using a config file, verify:
 
 - [ ] All required fields are present
-- [ ] Color codes are valid hex format
+- [ ] Color codes are valid hex values
 - [ ] Image URLs are accessible
-- [ ] All links have proper href values
-- [ ] Section types match available components
-- [ ] Content is free of typos and grammatically correct
-- [ ] Brand voice is consistent throughout
+- [ ] All IDs are unique within their sections
+- [ ] Navigation links point to valid sections/pages
+- [ ] Text content is free of typos
+- [ ] Brand name is consistent throughout
+- [ ] Social media URLs are correct
 
----
+## Common Customization Scenarios
+
+### Changing Brand Colors
+```yaml
+theme:
+  primary: '#YOUR_PRIMARY_COLOR'
+  secondary: '#YOUR_SECONDARY_COLOR'
+  accent: '#1e293b'
+```
+
+### Adding a New Feature
+```yaml
+items:
+  - id: 'f7'  # Increment ID
+    title: 'New Feature'
+    description: 'Description of the new feature'
+    icon:
+      value: '🎯'
+```
+
+### Updating Navigation
+```yaml
+links:
+  - text: 'New Page'
+    href: '/new-page'
+```
+
+### Changing Hero CTA
+```yaml
+buttons:
+  - text: 'Your CTA Text'
+    href: '/your-link'
+    variant: 'primary'
+```
+
+## Troubleshooting
+
+### Config not loading?
+- Check YAML syntax (indentation must be consistent)
+- Verify file is saved as `.yaml` extension
+- Ensure no special characters in string values
+
+### Colors not applying?
+- Verify hex color format (`#rrggbb`)
+- Check that colors are in the `theme` section
+- Ensure no typos in color codes
+
+### Images not showing?
+- Verify URLs are absolute (start with `https://`)
+- Check that images are publicly accessible
+- Ensure URLs don't have spaces or special characters
+
+### Navigation not working?
+- Verify `href` values match section IDs (with `#` prefix)
+- Check that page slugs are correct
+- Ensure links array is properly formatted
 
 ## Support
 
-For questions or issues with configuration files:
+For questions or issues with config files:
+1. Check this documentation first
+2. Verify YAML syntax using an online validator
+3. Compare with working example configs
+4. Review the application logs for error messages
 
-- Check the component registry in `lib/section-registry.ts`
-- Review existing example configs in the `config/` directory
-- Refer to component implementations in `components/atomic/`
+---
+
+**Last Updated**: December 2024  
+**Version**: 1.0.0
