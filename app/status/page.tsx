@@ -23,21 +23,21 @@ export default async function StatusPage() {
   const { hero, searchPlaceholder, searchButton, recentTitle, statuses } = data;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-32 max-w-6xl">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             {hero?.title || 'Status Tracking'}
           </h1>
-          <p className="text-xl text-gray-600">{hero?.subtitle || ''}</p>
+          <p className="text-xl text-gray-600 dark:text-gray-400">{hero?.subtitle || ''}</p>
         </div>
 
         {/* Search Box */}
         <div className="max-w-2xl mx-auto mb-12">
-          <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-6">
             <label
               htmlFor="trackingNumber"
-              className="block text-sm font-semibold text-gray-700 mb-3"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3"
             >
               {searchPlaceholder || 'Enter tracking number'}
             </label>
@@ -46,9 +46,9 @@ export default async function StatusPage() {
                 type="text"
                 id="trackingNumber"
                 placeholder={searchPlaceholder || 'Enter ID'}
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
               />
-              <button className="px-8 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors">
+              <button className="px-8 py-3 bg-green-600 dark:bg-green-500 text-white rounded-lg font-bold hover:bg-green-700 dark:hover:bg-green-600 transition-colors">
                 {searchButton || 'Track'}
               </button>
             </div>
@@ -57,32 +57,31 @@ export default async function StatusPage() {
 
         {/* Recent Deliveries */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
             {recentTitle || 'Recent Activity'}
           </h2>
           <div className="space-y-6">
             {statuses?.map((delivery: any) => (
-              <div key={delivery.orderId} className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
+              <div key={delivery.orderId} className="bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-6 lg:p-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">
+                      <span className="text-sm font-semibold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900 px-3 py-1 rounded-full">
                         {delivery.orderId}
                       </span>
                       <span
-                        className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                          delivery.status === 'Terkirim'
-                            ? 'bg-green-100 text-green-700'
+                        className={`text-sm font-semibold px-3 py-1 rounded-full ${delivery.status === 'Terkirim'
+                            ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
                             : delivery.status === 'Dalam Pengiriman'
-                              ? 'bg-blue-100 text-blue-700'
-                              : 'bg-orange-100 text-orange-700'
-                        }`}
+                              ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
+                              : 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300'
+                          }`}
                       >
                         {delivery.status}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{delivery.customer}</h3>
-                    <p className="text-gray-600 flex items-center gap-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">{delivery.customer}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 flex items-center gap-2">
                       <svg
                         className="w-5 h-5"
                         fill="none"
@@ -106,20 +105,20 @@ export default async function StatusPage() {
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-gray-500 mb-1">Estimasi Tiba</p>
-                    <p className="text-lg font-bold text-gray-900">{delivery.estimatedArrival}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Estimasi Tiba</p>
+                    <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{delivery.estimatedArrival}</p>
                   </div>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="mt-6">
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
                     <span>Progress</span>
                     <span>{delivery.progress}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
                     <div
-                      className="bg-green-600 h-2 rounded-full transition-all duration-500"
+                      className="bg-green-600 dark:bg-green-500 h-2 rounded-full transition-all duration-500"
                       style={{ width: `${delivery.progress}%` }}
                     />
                   </div>
